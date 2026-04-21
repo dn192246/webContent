@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diseño Web - Clase 2 - CSS Flexbox</title>
+
+  <style>
+    :root {
+      --primary-color: #1a5276;
+      --secondary-color: #2980b9;
+      --accent-color: #ecf0f1;
+      --text-color: #2c3e50;
+      --highlight: #e67e22;
+      --ok: #1e8449;
+      --warn: #b9770e;
+      --bad: #922b21;
+      --soft: #f4f7f6;
+      --ink: #0f172a;
+      --violet: #6c5ce7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text-color);
+      background-color: var(--soft);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 3.2rem 1rem 2.4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: -40px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.18), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.12), transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.10), transparent 55%);
+      pointer-events: none;
+    }
+
+    header h1,
+    header p,
+    .anchorbar {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      margin: 0 0 0.4rem 0;
+      font-size: 2.2rem;
+      letter-spacing: 0.2px;
+    }
+
+    header p {
+      margin: 0.2rem 0;
+      opacity: 0.97;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      background: white;
+      padding: 2.6rem;
+      margin-bottom: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      border-left: 6px solid var(--highlight);
+      padding-left: 14px;
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      color: var(--secondary-color);
+      margin: 1.4rem 0 0.55rem;
+      font-size: 1.22rem;
+    }
+
+    .big {
+      font-size: 1.18rem;
+    }
+
+    .small {
+      font-size: 0.93rem;
+      opacity: 0.95;
+    }
+
+    .u {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-decoration-color: rgba(230, 126, 34, 0.55);
+      text-underline-offset: 3px;
+    }
+
+    .anchorbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .anchorbar a {
+      color: white;
+      text-decoration: none;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.08);
+      transition: transform 0.15s ease, background 0.15s ease;
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .anchorbar a:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      background: var(--accent-color);
+      padding: 1.35rem;
+      border-radius: 12px;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      position: relative;
+      overflow-x: auto;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .hoverline {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--highlight), rgba(230, 126, 34, 0.15));
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+
+    .card:hover .hoverline {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(41, 128, 185, 0.12);
+      color: var(--secondary-color);
+      font-weight: 800;
+      font-size: 0.85rem;
+      margin: 0.15rem 0.25rem 0.15rem 0;
+    }
+
+    .pill.violet {
+      background: rgba(108, 92, 231, 0.12);
+      color: var(--violet);
+    }
+
+    .pill.orange {
+      background: rgba(230, 126, 34, 0.12);
+      color: var(--highlight);
+    }
+
+    .extra-info {
+      background-color: #fff3e0;
+      border-left: 6px solid #ff9800;
+      padding: 14px 16px;
+      margin: 18px 0;
+      font-size: 0.98rem;
+      border-radius: 10px;
+    }
+
+    .callout {
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin: 14px 0;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      background: #f8fbff;
+    }
+
+    .stepbox {
+      background: linear-gradient(180deg, #fbfcfe, #f7fbff);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 12px 0;
+    }
+
+    .mono,
+    .mono-block {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    .mono {
+      white-space: nowrap;
+    }
+
+    .mono-block {
+      background: rgba(15, 23, 42, 0.04);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 12px;
+      padding: 14px;
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+
+    code {
+      background: rgba(41, 128, 185, 0.1);
+      color: var(--primary-color);
+      padding: 2px 5px;
+      border-radius: 5px;
+      font-weight: 700;
+    }
+
+    .table-wrap {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 12px;
+    }
+
+    .table-wrap table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border: 1px solid #e6e6e6;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    ul li,
+    ol li {
+      margin: 0.45rem 0;
+    }
+
+    .demo-title {
+      font-weight: 900;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .flex-demo {
+      background: #f7faff;
+      border: 1px dashed rgba(41, 128, 185, 0.45);
+      border-radius: 14px;
+      padding: 16px;
+      margin: 16px 0;
+      display: flex;
+      gap: 12px;
+    }
+
+    .demo-box {
+      background: linear-gradient(135deg, #2980b9, #6c5ce7);
+      color: white;
+      border-radius: 12px;
+      padding: 16px;
+      min-width: 70px;
+      text-align: center;
+      font-weight: 900;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+    }
+
+    .demo-row {
+      flex-direction: row;
+    }
+
+    .demo-column {
+      flex-direction: column;
+    }
+
+    .demo-center {
+      justify-content: center;
+      align-items: center;
+      min-height: 160px;
+    }
+
+    .demo-between {
+      justify-content: space-between;
+    }
+
+    .demo-wrap {
+      flex-wrap: wrap;
+    }
+
+    .demo-wrap .demo-box {
+      flex: 1 1 180px;
+    }
+
+    .layout-example {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .layout-main {
+      flex: 2 1 420px;
+      background: #f8fbff;
+      border: 1px solid rgba(41, 128, 185, 0.18);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .layout-aside {
+      flex: 1 1 240px;
+      background: #fff3e0;
+      border: 1px solid rgba(230, 126, 34, 0.18);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .mini-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      background: #f8fbff;
+      border: 1px solid rgba(41, 128, 185, 0.18);
+      padding: 16px;
+      border-radius: 14px;
+      margin-top: 14px;
+    }
+
+    .mini-navbar strong {
+      color: var(--primary-color);
+      font-size: 1.1rem;
+    }
+
+    .mini-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .mini-links a {
+      text-decoration: none;
+      color: var(--secondary-color);
+      font-weight: 900;
+    }
+
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      background: #f8fbff;
+      border: 1px solid rgba(41, 128, 185, 0.18);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 14px;
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--highlight), var(--violet));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: 900;
+      font-size: 1.4rem;
+      flex: 0 0 auto;
+    }
+
+    .profile-info {
+      flex: 1 1 240px;
+    }
+
+    .profile-info h4 {
+      margin: 0 0 4px;
+      color: var(--primary-color);
+      font-size: 1.15rem;
+    }
+
+    .profile-info p {
+      margin: 0;
+    }
+
+    .quiz {
+      background: #f7faff;
+      border: 1px solid rgba(41, 128, 185, 0.18);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 12px;
+    }
+
+    .quiz .q {
+      padding: 12px 0;
+      border-top: 1px dashed rgba(0, 0, 0, 0.12);
+    }
+
+    .quiz .q:first-child {
+      border-top: none;
+    }
+
+    .quiz label {
+      display: block;
+      margin: 6px 0;
+      cursor: pointer;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 800;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--primary-color);
+      border: 2px solid rgba(26, 82, 118, 0.25);
+    }
+
+    .result {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      display: none;
+      font-weight: 900;
+    }
+
+    .result.ok {
+      background: rgba(30, 132, 73, 0.12);
+      color: var(--ok);
+      display: block;
+    }
+
+    .result.warn {
+      background: rgba(185, 119, 14, 0.12);
+      color: var(--warn);
+      display: block;
+    }
+
+    .result.bad {
+      background: rgba(146, 43, 33, 0.12);
+      color: var(--bad);
+      display: block;
+    }
+
+    .feedback-form {
+      background: #f7faff;
+      border: 1px solid rgba(41, 128, 185, 0.18);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .field label {
+      font-weight: 900;
+      color: var(--primary-color);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid rgba(15, 23, 42, 0.16);
+      border-radius: 10px;
+      font: inherit;
+      background: white;
+      color: var(--text-color);
+    }
+
+    .field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #7f8c8d;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      section {
+        padding: 1.5rem;
+      }
+
+      .table-wrap table {
+        min-width: 640px;
+      }
+
+      .flex-demo {
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Clase 2: CSS Flexbox</h1>
+    <p class="subtitle">Organización, alineación y distribución flexible de elementos en una página web</p>
+    <p class="subtitle"><em>"Flexbox convierte el desorden visual en estructura, alineación y diseño adaptable"</em></p>
+
+    <div class="anchorbar">
+      <a href="#introduccion">Introducción</a>
+      <a href="#modelo">Modelo Flexbox</a>
+      <a href="#propiedades">Propiedades</a>
+      <a href="#ejemplos">Ejemplos</a>
+      <a href="#practica">Práctica</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <section id="introduccion">
+      <h2>1) Introducción a Flexbox</h2>
+
+      <p class="big">
+        <strong>Flexbox</strong> es un modelo de diseño de CSS que permite organizar elementos
+        dentro de un contenedor de forma flexible. Sirve para alinear, distribuir y adaptar elementos
+        sin depender de técnicas antiguas como tablas, flotantes o márgenes excesivos.
+      </p>
+
+      <p>
+        En una página web moderna es común necesitar que varios elementos aparezcan uno al lado del otro,
+        se centren, tengan espacios uniformes o bajen a otra línea cuando la pantalla es pequeña.
+        Flexbox facilita todo esto con pocas propiedades.
+      </p>
+
+      <div class="concept-grid">
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>Idea central</h3>
+          <p>
+            Flexbox trabaja con un <strong>contenedor padre</strong> y varios
+            <strong>elementos hijos</strong>. Al aplicar <code>display: flex;</code>
+            al contenedor, sus hijos se vuelven elementos flexibles.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>Analogía</h3>
+          <p>
+            Imagina una fila de estudiantes en el aula. El docente puede pedirles que se alineen al centro,
+            que se separen uniformemente o que formen otra fila si ya no caben. Eso es similar a lo que hace
+            Flexbox con los elementos HTML.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>Uso frecuente</h3>
+          <p>
+            Flexbox se usa para menús, tarjetas, formularios, galerías, secciones de contenido,
+            botones, barras superiores, perfiles y diseños responsivos.
+          </p>
+        </div>
+      </div>
+
+      <div class="extra-info">
+        <strong>Idea para recordar:</strong> Flexbox no se aplica directamente a todos los elementos de la página,
+        sino al <strong>contenedor</strong> que queremos controlar. Los hijos de ese contenedor son los que se
+        ordenan y alinean.
+      </div>
+    </section>
+
+    <section id="modelo">
+      <h2>2) El modelo Flexbox</h2>
+
+      <p>
+        Para entender Flexbox, primero debemos conocer tres conceptos básicos:
+        <strong>contenedor flexible</strong>, <strong>elementos flexibles</strong> y <strong>ejes de
+          alineación</strong>.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Descripción</th>
+              <th>Ejemplo sencillo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Contenedor flexible</td>
+              <td>Es el elemento padre al que se le aplica <code>display: flex;</code>.</td>
+              <td>Un <code>div</code> que contiene varias tarjetas.</td>
+            </tr>
+            <tr>
+              <td>Elemento flexible</td>
+              <td>Es cada hijo directo dentro del contenedor flexible.</td>
+              <td>Cada tarjeta dentro del contenedor.</td>
+            </tr>
+            <tr>
+              <td>Eje principal</td>
+              <td>Es la dirección principal en la que se colocan los elementos.</td>
+              <td>Horizontal si usamos <code>flex-direction: row;</code>.</td>
+            </tr>
+            <tr>
+              <td>Eje transversal</td>
+              <td>Es el eje perpendicular al eje principal.</td>
+              <td>Vertical si el eje principal es horizontal.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Ejemplo base</h3>
+
+      <div class="mono-block">
+        .contenedor {
+        display: flex;
+        }
+      </div>
+
+      <p>
+        Con esa sola línea, los elementos hijos dejan de comportarse como bloques normales y pasan a distribuirse
+        según las reglas de Flexbox.
+      </p>
+
+      <div class="demo-title">Demostración visual: elementos en fila</div>
+
+      <div class="flex-demo demo-row">
+        <div class="demo-box">1</div>
+        <div class="demo-box">2</div>
+        <div class="demo-box">3</div>
+      </div>
+
+      <div class="callout">
+        En HTML, los <code>div</code> normalmente aparecen uno debajo del otro. Pero cuando su padre tiene
+        <code>display: flex;</code>, pueden colocarse fácilmente en fila.
+      </div>
+    </section>
+
+    <section id="propiedades">
+      <h2>3) Propiedades principales de Flexbox</h2>
+
+      <p>
+        Flexbox tiene varias propiedades. Algunas se aplican al <strong>contenedor padre</strong> y otras a los
+        <strong>elementos hijos</strong>. En esta clase nos centraremos en las más usadas para construir diseños.
+      </p>
+
+      <div class="concept-grid">
+        <div class="card">
+          <div class="hoverline"></div>
+          <span class="pill">Contenedor</span>
+          <h3>display: flex</h3>
+          <p>
+            Activa Flexbox en el contenedor. Es el punto de partida para usar este modelo de diseño.
+          </p>
+          <div class="mono-block">
+            .contenedor {
+            display: flex;
+            }
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <span class="pill">Contenedor</span>
+          <h3>flex-direction</h3>
+          <p>
+            Define la dirección en la que se colocan los elementos: en fila o en columna.
+          </p>
+          <div class="mono-block">
+            .contenedor {
+            flex-direction: row;
+            }
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <span class="pill">Contenedor</span>
+          <h3>justify-content</h3>
+          <p>
+            Distribuye los elementos sobre el eje principal. Puede centrarlos o separarlos.
+          </p>
+          <div class="mono-block">
+            .contenedor {
+            justify-content: center;
+            }
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <span class="pill">Contenedor</span>
+          <h3>align-items</h3>
+          <p>
+            Alinea los elementos en el eje transversal. Se usa mucho para centrar verticalmente.
+          </p>
+          <div class="mono-block">
+            .contenedor {
+            align-items: center;
+            }
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <span class="pill">Contenedor</span>
+          <h3>gap</h3>
+          <p>
+            Agrega separación uniforme entre los elementos sin tener que usar márgenes en cada hijo.
+          </p>
+          <div class="mono-block">
+            .contenedor {
+            gap: 20px;
+            }
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <span class="pill">Contenedor</span>
+          <h3>flex-wrap</h3>
+          <p>
+            Permite que los elementos bajen a una nueva línea cuando no caben en una sola fila.
+          </p>
+          <div class="mono-block">
+            .contenedor {
+            flex-wrap: wrap;
+            }
+          </div>
+        </div>
+      </div>
+
+      <h3>Valores comunes de justify-content</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Valor</th>
+              <th>¿Qué hace?</th>
+              <th>Uso típico</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>flex-start</code></td>
+              <td>Coloca los elementos al inicio del eje principal.</td>
+              <td>Cuando queremos que todo comience desde la izquierda.</td>
+            </tr>
+            <tr>
+              <td><code>center</code></td>
+              <td>Centra los elementos.</td>
+              <td>Botones, tarjetas o bloques destacados.</td>
+            </tr>
+            <tr>
+              <td><code>space-between</code></td>
+              <td>Deja el mayor espacio posible entre elementos.</td>
+              <td>Menús con logo a un lado y enlaces al otro.</td>
+            </tr>
+            <tr>
+              <td><code>space-around</code></td>
+              <td>Coloca espacio alrededor de cada elemento.</td>
+              <td>Distribución visual más abierta.</td>
+            </tr>
+            <tr>
+              <td><code>space-evenly</code></td>
+              <td>Distribuye espacios iguales entre todos los elementos.</td>
+              <td>Galerías o grupos de botones.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Valores comunes de align-items</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Valor</th>
+              <th>¿Qué hace?</th>
+              <th>Ejemplo de uso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>stretch</code></td>
+              <td>Estira los elementos para ocupar el alto disponible.</td>
+              <td>Diseños donde las tarjetas deben tener una altura uniforme.</td>
+            </tr>
+            <tr>
+              <td><code>center</code></td>
+              <td>Centra los elementos en el eje transversal.</td>
+              <td>Centrar elementos verticalmente dentro de una caja.</td>
+            </tr>
+            <tr>
+              <td><code>flex-start</code></td>
+              <td>Alinea los elementos al inicio del eje transversal.</td>
+              <td>Cuando todos deben iniciar arriba.</td>
+            </tr>
+            <tr>
+              <td><code>flex-end</code></td>
+              <td>Alinea los elementos al final del eje transversal.</td>
+              <td>Cuando se desea alineación inferior.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="ejemplos">
+      <h2>4) Ejemplos visuales con Flexbox</h2>
+
+      <h3>Ejemplo 1: Dirección en fila</h3>
+      <p>
+        Con <code>flex-direction: row;</code>, los elementos se colocan de izquierda a derecha.
+        Este es el comportamiento predeterminado.
+      </p>
+
+      <div class="mono-block">
+        .fila {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        }
+      </div>
+
+      <div class="flex-demo demo-row">
+        <div class="demo-box">HTML</div>
+        <div class="demo-box">CSS</div>
+        <div class="demo-box">JS</div>
+      </div>
+
+      <h3>Ejemplo 2: Dirección en columna</h3>
+      <p>
+        Con <code>flex-direction: column;</code>, los elementos se colocan de arriba hacia abajo.
+      </p>
+
+      <div class="mono-block">
+        .columna {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        }
+      </div>
+
+      <div class="flex-demo demo-column">
+        <div class="demo-box">Paso 1</div>
+        <div class="demo-box">Paso 2</div>
+        <div class="demo-box">Paso 3</div>
+      </div>
+
+      <h3>Ejemplo 3: Centrado horizontal y vertical</h3>
+      <p>
+        Uno de los usos más populares de Flexbox es centrar elementos fácilmente.
+      </p>
+
+      <div class="mono-block">
+        .caja {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+      </div>
+
+      <div class="flex-demo demo-center">
+        <div class="demo-box">Centro</div>
+      </div>
+
+      <h3>Ejemplo 4: Separar elementos con space-between</h3>
+      <p>
+        Este valor es muy útil para barras de navegación: coloca un elemento al inicio y otro al final.
+      </p>
+
+      <div class="mono-block">
+        .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+      </div>
+
+      <div class="flex-demo demo-between">
+        <div class="demo-box">Logo</div>
+        <div class="demo-box">Menú</div>
+      </div>
+
+      <h3>Ejemplo 5: Tarjetas responsivas con flex-wrap</h3>
+      <p>
+        Cuando los elementos no caben en una sola línea, <code>flex-wrap: wrap;</code> permite que bajen
+        automáticamente a otra fila.
+      </p>
+
+      <div class="mono-block">
+        .cards {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        }
+
+        .card {
+        flex: 1 1 180px;
+        }
+      </div>
+
+      <div class="flex-demo demo-wrap">
+        <div class="demo-box">Tarjeta 1</div>
+        <div class="demo-box">Tarjeta 2</div>
+        <div class="demo-box">Tarjeta 3</div>
+        <div class="demo-box">Tarjeta 4</div>
+        <div class="demo-box">Tarjeta 5</div>
+      </div>
+    </section>
+
+    <section id="aplicaciones">
+      <h2>5) Aplicaciones reales de Flexbox</h2>
+
+      <p>
+        Flexbox no es solo una teoría. Se usa constantemente en páginas reales porque resuelve problemas
+        comunes de diseño.
+      </p>
+
+      <h3>Aplicación 1: Barra de navegación</h3>
+
+      <div class="mini-navbar">
+        <strong>Ricaldone</strong>
+
+        <div class="mini-links">
+          <a href="#">Inicio</a>
+          <a href="#">Cursos</a>
+          <a href="#">Contacto</a>
+        </div>
+      </div>
+
+      <div class="mono-block">
+        .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        }
+      </div>
+
+      <h3>Aplicación 2: Tarjeta de perfil</h3>
+
+      <div class="profile-card">
+        <div class="avatar">RW</div>
+
+        <div class="profile-info">
+          <h4>Estudiante de Diseño Web</h4>
+          <p>
+            Esta tarjeta usa Flexbox para colocar el avatar a la izquierda y la información a la derecha.
+            Si la pantalla es pequeña, los elementos pueden acomodarse mejor.
+          </p>
+        </div>
+      </div>
+
+      <div class="mono-block">
+        .perfil {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        }
+      </div>
+
+      <h3>Aplicación 3: Contenido principal y barra lateral</h3>
+
+      <div class="layout-example">
+        <div class="layout-main">
+          <h3>Contenido principal</h3>
+          <p>
+            Aquí podría ir el contenido más importante de una página: una noticia, una clase,
+            un artículo o una explicación.
+          </p>
+        </div>
+
+        <div class="layout-aside">
+          <h3>Barra lateral</h3>
+          <p>
+            Aquí podrían ir enlaces, avisos, recursos o información complementaria.
+          </p>
+        </div>
+      </div>
+
+      <div class="mono-block">
+        .layout {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        }
+
+        .main {
+        flex: 2 1 420px;
+        }
+
+        .aside {
+        flex: 1 1 240px;
+        }
+      </div>
+
+      <div class="extra-info">
+        <strong>Observación importante:</strong> la propiedad <code>flex</code> puede controlar cuánto crece,
+        cuánto se reduce y cuál es el tamaño base de un elemento.
+      </div>
+    </section>
+
+    <section id="errores">
+      <h2>6) Errores comunes al usar Flexbox</h2>
+
+      <div class="concept-grid">
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>Error 1: aplicar Flexbox al elemento equivocado</h3>
+          <p>
+            Flexbox debe aplicarse al contenedor padre. Si se aplica a un hijo individual, no ordenará
+            a sus hermanos.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>Error 2: olvidar flex-wrap</h3>
+          <p>
+            Si hay muchos elementos en una fila y no se usa <code>flex-wrap</code>, pueden comprimirse
+            demasiado o desbordarse.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>Error 3: confundir los ejes</h3>
+          <p>
+            <code>justify-content</code> trabaja sobre el eje principal y <code>align-items</code>
+            sobre el eje transversal. Si cambia <code>flex-direction</code>, también cambia la lógica.
+          </p>
+        </div>
+      </div>
+
+      <div class="extra-info">
+        <strong>Consejo práctico:</strong> antes de escribir muchas propiedades, identifica primero cuál es el
+        contenedor, cuáles son los hijos y en qué dirección quieres ordenarlos.
+      </div>
+    </section>
+
+    <section id="practica">
+      <h2>7) Práctica de repaso</h2>
+
+      <p>
+        Responde las preguntas y luego verifica tus respuestas.
+      </p>
+
+      <div class="quiz" id="quiz">
+        <div class="q">
+          <strong>1.</strong> ¿Qué propiedad activa Flexbox en un contenedor?
+          <label><input type="radio" name="q1" value="a"> <code>position: flex;</code></label>
+          <label><input type="radio" name="q1" value="b"> <code>display: flex;</code></label>
+          <label><input type="radio" name="q1" value="c"> <code>flexbox: true;</code></label>
+        </div>
+
+        <div class="q">
+          <strong>2.</strong> ¿Qué propiedad se usa para separar elementos de forma uniforme?
+          <label><input type="radio" name="q2" value="a"> <code>gap</code></label>
+          <label><input type="radio" name="q2" value="b"> <code>line-height</code></label>
+          <label><input type="radio" name="q2" value="c"> <code>text-align</code></label>
+        </div>
+
+        <div class="q">
+          <strong>3.</strong> ¿Qué propiedad permite que los elementos bajen a otra línea si no caben?
+          <label><input type="radio" name="q3" value="a"> <code>flex-wrap</code></label>
+          <label><input type="radio" name="q3" value="b"> <code>font-wrap</code></label>
+          <label><input type="radio" name="q3" value="c"> <code>box-wrap</code></label>
+        </div>
+
+        <div class="q">
+          <strong>4.</strong> ¿Qué propiedad distribuye elementos en el eje principal?
+          <label><input type="radio" name="q4" value="a"> <code>justify-content</code></label>
+          <label><input type="radio" name="q4" value="b"> <code>align-text</code></label>
+          <label><input type="radio" name="q4" value="c"> <code>vertical-align</code></label>
+        </div>
+
+        <div class="q">
+          <strong>5.</strong> ¿Cuál es un uso común de Flexbox?
+          <label><input type="radio" name="q5" value="a"> Crear bases de datos</label>
+          <label><input type="radio" name="q5" value="b"> Diseñar menús, tarjetas y secciones responsivas</label>
+          <label><input type="radio" name="q5" value="c"> Instalar servidores web</label>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn" onclick="calificarQuiz()">Verificar respuestas</button>
+          <button class="btn ghost" onclick="reiniciarQuiz()">Reiniciar</button>
+        </div>
+
+        <div id="resultadoQuiz" class="result"></div>
+      </div>
+    </section>
+
+
+    <section id="cierre">
+      <h2>8) Cierre</h2>
+
+      <p>
+        Flexbox es una herramienta fundamental para el diseño web moderno. Permite organizar elementos con mayor
+        facilidad, mejorar la presentación visual y construir interfaces que se adapten mejor a diferentes tamaños
+        de pantalla.
+      </p>
+
+      <p>
+        Lo más importante es recordar que Flexbox funciona a partir de una relación entre un contenedor padre y
+        sus elementos hijos. Al comprender esta relación, propiedades como <code>justify-content</code>,
+        <code>align-items</code>, <code>gap</code> y <code>flex-wrap</code> se vuelven mucho más fáciles de aplicar.
+      </p>
+
+      <div class="extra-info">
+        <strong>Para recordar:</strong> Flexbox no solo sirve para “poner elementos en fila”.
+        Sirve para pensar el diseño de forma más ordenada, flexible y adaptable.
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    Clase 2 - CSS Flexbox | Material de apoyo para Diseño Web
+  </footer>
+
+  <script>
+    function calificarQuiz() {
+      let puntos = 0;
+
+      const respuestas = {
+        q1: "b",
+        q2: "a",
+        q3: "a",
+        q4: "a",
+        q5: "b"
+      };
+
+      for (const pregunta in respuestas) {
+        const seleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+
+        if (seleccionada && seleccionada.value === respuestas[pregunta]) {
+          puntos++;
+        }
+      }
+
+      const resultado = document.getElementById("resultadoQuiz");
+      resultado.className = "result";
+
+      if (puntos === 5) {
+        resultado.classList.add("ok");
+        resultado.textContent = `Excelente. Obtuviste ${puntos}/5. Comprendiste muy bien los fundamentos de Flexbox.`;
+      } else if (puntos >= 3) {
+        resultado.classList.add("warn");
+        resultado.textContent = `Vas bien. Obtuviste ${puntos}/5. Conviene repasar algunas propiedades de Flexbox.`;
+      } else {
+        resultado.classList.add("bad");
+        resultado.textContent = `Obtuviste ${puntos}/5. Te recomiendo volver a leer la clase y practicar los ejemplos.`;
+      }
+    }
+
+    function reiniciarQuiz() {
+      document.querySelectorAll('#quiz input[type="radio"]').forEach(input => input.checked = false);
+
+      const resultado = document.getElementById("resultadoQuiz");
+      resultado.className = "result";
+      resultado.textContent = "";
+    }
+
+    const feedbackForm = document.getElementById("feedbackForm");
+
+    
+  </script>
+
+</body>
+
+</html>

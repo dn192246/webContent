@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Clases Web — Lecciones de tecnologías web</title>
+    <meta name="description" content="Lecciones, recursos y ejercicios sobre HTML, CSS y JavaScript. Material para mis clases de tecnologías web.">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#">Clases<span class="brand-accent">Web</span></a>
+        <nav class="nav" id="main-nav">
+          <a href="#sobre">Sobre</a>
+          <a href="#lecciones">Lecciones</a>
+          <a href="#recursos">Recursos</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+        <div class="header-actions">
+          <button class="btn btn-ghost" id="theme-toggle" aria-label="Cambiar tema">🌗</button>
+          <button class="btn btn-primary nav-toggle" id="nav-toggle" aria-label="Abrir menú">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero alt">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <h1>Lecciones prácticas de <span class="accent">HTML, CSS y JavaScript</span></h1>
+            <p class="lead">Material claro y conciso para tus primeras clases y ejercicios sobre tecnologías web. Ejemplos, tareas y recursos para aprender paso a paso.</p>
+            <p class="hero-ctas">
+              <a class="btn btn-primary" href="#lecciones">Ver lecciones</a>
+              <a class="btn btn-outline" href="#recursos">Explorar recursos</a>
+            </p>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="card example-card">
+              <div class="card-header">Próxima clase</div>
+              <div class="card-body">
+                <strong>Intro a CSS</strong>
+                <p class="muted">Fundamentos y práctica con flexbox y grid.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre" class="section container">
+        <h2>Sobre estas clases</h2>
+        <p>Este sitio servirá como repositorio de apuntes, ejercicios y recursos que uso en mis clases de tecnologías web. Las secciones incluyen lecciones cortas, ejemplos interactivos y enlaces útiles.</p>
+      </section>
+
+      <section id="lecciones" class="section container">
+        <h2>Lecciones</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>HTML básico</h3>
+            <p class="muted">Estructura de documentos, elementos semánticos y buenas prácticas.</p>
+            <p class="meta">Duración: 1.5h • Nivel: Principiante</p>
+          </article>
+          <article class="card">
+            <h3>CSS: Layout</h3>
+            <p class="muted">Box model, Flexbox y Grid para diseños responsivos.</p>
+            <p class="meta">Duración: 2h • Nivel: Principiante/Intermedio</p>
+          </article>
+          <article class="card">
+            <h3>JavaScript: Fundamentos</h3>
+            <p class="muted">Sintaxis, DOM y eventos para construir interactividad.</p>
+            <p class="meta">Duración: 2h • Nivel: Principiante</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="recursos" class="section container alt">
+        <h2>Recursos</h2>
+        <ul class="resources">
+          <li><a href="#">Guía rápida de HTML</a></li>
+          <li><a href="#">Cheatsheet CSS</a></li>
+          <li><a href="#">Ejercicios prácticos</a></li>
+        </ul>
+      </section>
+
+      <section id="contacto" class="section container">
+        <h2>Contacto</h2>
+        <p>¿Tienes dudas o sugerencias para las clases? Escríbeme a <a href="mailto:tu@correo.com">tu@correo.com</a> o sígueme en redes para novedades.</p>
+        <p><a class="btn btn-primary" href="mailto:tu@correo.com">Enviar correo</a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <small>© 2026 Clases Web — Material para enseñanza de tecnologías web.</small>
+        <nav class="footer-nav">
+          <a href="#">Privacidad</a>
+          <a href="#">Términos</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
