@@ -4,49 +4,161 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <title>Desarrollo Web — Lecciones de tecnologías web</title>
+
     <meta name="description"
-        content="Lecciones, recursos y ejercicios sobre HTML, CSS y JavaScript. Material para mis clases de tecnologías web.">
+        content="Lecciones, recursos y ejercicios sobre HTML, CSS y JavaScript. Material para clases de tecnologías web.">
+
     <link rel="icon" href="img/internet.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600;700&family=Poppins:wght@400;600&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <a class="brand" href="#">Desarrollo<span class="brand-accent">Web</span></a>
-            <div class="header-actions">
-                <button class="btn btn-ghost" id="theme-toggle" aria-label="Cambiar tema">🌗</button>
-            </div>
+
+    <header class="hero-header">
+        <div class="header-glow"></div>
+
+        <div class="container header-content">
+            <nav class="topnav">
+                <a class="brand" href="#">
+                    Desarrollo<span>Web</span>
+                </a>
+
+                <div class="nav-actions">
+                    <a href="#lecciones">Clases</a>
+                    <a href="#ruta">Ruta</a>
+                </div>
+            </nav>
+
+            <section class="hero">
+                <div class="hero-text">
+                    <span class="tag">Tecnologías Web</span>
+
+                    <h1>Menú de clases</h1>
+
+                    <p>
+                        Material de apoyo para el aprendizaje de desarrollo web. Aquí encontrarás
+                        clases organizadas sobre HTML, CSS, diseño visual y construcción de páginas web.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#lecciones" class="btn primary">Ver clases</a>
+                        <a href="#ruta" class="btn secondary">Ver ruta de aprendizaje</a>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <h2>Contenido inicial</h2>
+
+                    <ul>
+                        <li>Fundamentos de HTML y CSS</li>
+                        <li>Etiquetas semánticas</li>
+                        <li>Clases y estilos básicos</li>
+                        <li>Diseño flexible con Flexbox</li>
+                    </ul>
+                </div>
+            </section>
         </div>
     </header>
 
     <main>
-        <section class="hero alt">
-            <div class="container hero-grid">
-                <div class="hero-content">
-                    <h1>Menú de clases</h1>
-                </div>
+
+        <section id="lecciones" class="container section">
+            <div class="section-title">
+                <h2>Clases disponibles</h2>
+                <p>
+                    Selecciona una clase para revisar el contenido, ejemplos, explicaciones y práctica de repaso.
+                </p>
+            </div>
+
+            <div class="class-grid">
+
+                <a class="class-card" href="clase1.html">
+                    <div class="card-line"></div>
+
+                    <div class="class-top">
+                        <span class="class-number">Clase 1</span>
+                        <span class="class-status">Disponible</span>
+                    </div>
+
+                    <h3>Fundamentos de HTML y CSS</h3>
+
+                    <p>
+                        Introducción a la estructura de una página web, etiquetas semánticas,
+                        creación de clases y aplicación de estilos básicos.
+                    </p>
+
+                    <div class="class-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Semántica</span>
+                    </div>
+
+                    <div class="card-action">
+                        Entrar a la clase →
+                    </div>
+                </a>
+
+                <a class="class-card" href="clase2.html">
+                    <div class="card-line"></div>
+
+                    <div class="class-top">
+                        <span class="class-number">Clase 2</span>
+                        <span class="class-status">Disponible</span>
+                    </div>
+
+                    <h3>CSS Flexbox</h3>
+
+                    <p>
+                        Organización, alineación y distribución flexible de elementos para crear
+                        diseños modernos, limpios y adaptables.
+                    </p>
+
+                    <div class="class-tags">
+                        <span>CSS</span>
+                        <span>Flexbox</span>
+                        <span>Responsive</span>
+                    </div>
+
+                    <div class="card-action">
+                        Entrar a la clase →
+                    </div>
+                </a>
+
             </div>
         </section>
 
-        <section id="lecciones" class="section container">
-            <h2>Clases</h2>
-            <div class="class-grid">
-                <a class="class-card" href="clase1.html">
-                    <div class="class-number">Clase 1</div>
-                    <div class="class-title">HTML básico</div>
-                    <div class="class-sub">Estructura y elementos semánticos</div>
-                </a>
-                <a class="class-card" href="clase2.html">
-                    <div class="class-number">Clase 2</div>
-                    <div class="class-title">CSS Flexbox</div>
-                    <div class="class-sub">Diseño responsivo con flexbox</div>
-                </a>
+
+        <section id="recursos" class="container section">
+            <div class="section-title">
+                <h2>Propósito del material</h2>
+                <p>
+                    Este sitio funciona como punto de entrada para las clases de desarrollo web.
+                </p>
+            </div>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Contenido claro</h3>
+                    <p>
+                        Cada clase está organizada en secciones con teoría, ejemplos visuales y código explicado.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Práctica integrada</h3>
+                    <p>
+                        Las clases incluyen preguntas de repaso para comprobar la comprensión de los conceptos.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Diseño consistente</h3>
+                    <p>
+                        Las páginas mantienen una misma identidad visual para facilitar la navegación del estudiante.
+                    </p>
+                </article>
             </div>
         </section>
 
@@ -54,15 +166,11 @@
 
     <footer class="site-footer">
         <div class="container footer-inner">
-            <small>© 2026 Clases Web — Material para enseñanza de tecnologías web.</small>
-            <nav class="footer-nav">
-                <a href="#">Privacidad</a>
-                <a href="#">Términos</a>
-            </nav>
+            <p>Desarrollo Web — Material para enseñanza de tecnologías web</p>
+            <p>Ricardo De Paz © 2026</p>
         </div>
     </footer>
 
-    <script src="js/main.js" defer></script>
 </body>
 
 </html>
