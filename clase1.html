@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DiseÃ±o Web - Clase 1 - Fundamentos de HTML y CSS</title>
+    <title>Diseño Web - Clase 1 - Fundamentos de HTML y CSS</title>
 
     <link rel="icon" href="img/internet.png" type="image/png">
     <link rel="stylesheet" href="css/styles.css">
@@ -15,34 +15,34 @@
 
     <header>
         <h1>Clase 1: Fundamentos de HTML y CSS</h1>
-        <p class="subtitle">Estructura bÃ¡sica, etiquetas semÃ¡nticas, clases y estilos iniciales</p>
-        <p class="subtitle"><em>"HTML construye la estructura; CSS le da presentaciÃ³n, orden y personalidad"</em></p>
+        <p class="subtitle">Estructura básica, etiquetas semánticas, clases y estilos iniciales</p>
+        <p class="subtitle"><em>"HTML construye la estructura; CSS le da presentación, orden y personalidad"</em></p>
 
         <div class="anchorbar">
-            <a href="#introduccion">IntroducciÃ³n</a>
+            <a href="#introduccion">Introducción</a>
             <a href="#html">HTML</a>
-            <a href="#semanticas">SemÃ¡nticas</a>
+            <a href="#semanticas">Semánticas</a>
             <a href="#css">CSS</a>
             <a href="#clases">Clases</a>
             <a href="#ejemplos">Ejemplos</a>
             <a href="#practica">Cuestionario</a>
-            <a href="#practicaGuiada">PrÃ¡ctica</a>
+            <a href="#practicaGuiada">Práctica</a>
         </div>
     </header>
 
     <div class="container">
 
         <section id="introduccion">
-            <h2>1) IntroducciÃ³n al diseÃ±o web</h2>
+            <h2>1) Introducción al diseño web</h2>
 
             <p class="big">
-                Una pÃ¡gina web se construye combinando diferentes tecnologÃ­as. En esta clase nos centraremos en dos de
-                las mÃ¡s importantes: <strong>HTML</strong> y <strong>CSS</strong>.
+                Una página web se construye combinando diferentes tecnologías. En esta clase nos centraremos en dos de
+                las más importantes: <strong>HTML</strong> y <strong>CSS</strong>.
             </p>
 
             <p>
-                HTML se encarga de crear la estructura y el contenido de la pÃ¡gina. CSS se encarga de cambiar su
-                apariencia visual: colores, tamaÃ±os, mÃ¡rgenes, fondos, bordes y distribuciÃ³n.
+                HTML se encarga de crear la estructura y el contenido de la página. CSS se encarga de cambiar su
+                apariencia visual: colores, tamaños, márgenes, fondos, bordes y distribución.
             </p>
 
             <div class="concept-grid">
@@ -50,8 +50,8 @@
                     <div class="hoverline"></div>
                     <h3>HTML</h3>
                     <p>
-                        Es el lenguaje de marcado que permite definir los elementos de una pÃ¡gina:
-                        tÃ­tulos, pÃ¡rrafos, imÃ¡genes, enlaces, listas, secciones y formularios.
+                        Es el lenguaje de marcado que permite definir los elementos de una página:
+                        títulos, párrafos, imágenes, enlaces, listas, secciones y formularios.
                     </p>
                 </div>
 
@@ -60,13 +60,13 @@
                     <h3>CSS</h3>
                     <p>
                         Es el lenguaje que permite darle estilo a esos elementos:
-                        colores, tamaÃ±os, alineaciones, sombras, bordes y diseÃ±o visual.
+                        colores, tamaños, alineaciones, sombras, bordes y diseño visual.
                     </p>
                 </div>
 
                 <div class="card">
                     <div class="hoverline"></div>
-                    <h3>RelaciÃ³n entre ambos</h3>
+                    <h3>Relación entre ambos</h3>
                     <p>
                         HTML crea los elementos. CSS selecciona esos elementos y les aplica reglas visuales.
                     </p>
@@ -74,8 +74,8 @@
             </div>
 
             <div class="extra-info">
-                <strong>Idea para recordar:</strong> HTML responde a la pregunta â€œÂ¿quÃ© hay en la pÃ¡gina?â€,
-                mientras que CSS responde a â€œÂ¿cÃ³mo se ve eso en la pÃ¡gina?â€.
+                <strong>Idea para recordar:</strong> HTML responde a la pregunta “¿qué hay en la página?”,
+                mientras que CSS responde a “¿cómo se ve eso en la página?”.
             </div>
         </section>
 
@@ -83,12 +83,12 @@
             <h2>2) Fundamentos de HTML</h2>
 
             <p>
-                HTML significa <strong>HyperText Markup Language</strong>. No es un lenguaje de programaciÃ³n, sino un
-                lenguaje de marcado. Esto quiere decir que usa etiquetas para indicar la funciÃ³n de cada parte del
+                HTML significa <strong>HyperText Markup Language</strong>. No es un lenguaje de programación, sino un
+                lenguaje de marcado. Esto quiere decir que usa etiquetas para indicar la función de cada parte del
                 contenido.
             </p>
 
-            <h3>Estructura bÃ¡sica de un documento HTML</h3>
+            <h3>Estructura básica de un documento HTML</h3>
 
             <div class="mono-block">
                 &lt;!DOCTYPE html&gt;
@@ -97,12 +97,12 @@
                 &lt;head&gt;
                 &lt;meta charset="UTF-8"&gt;
                 &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-                &lt;title&gt;Mi primera pÃ¡gina&lt;/title&gt;
+                &lt;title&gt;Mi primera página&lt;/title&gt;
                 &lt;/head&gt;
 
                 &lt;body&gt;
                 &lt;h1&gt;Hola mundo&lt;/h1&gt;
-                &lt;p&gt;Esta es mi primera pÃ¡gina web.&lt;/p&gt;
+                &lt;p&gt;Esta es mi primera página web.&lt;/p&gt;
                 &lt;/body&gt;
 
                 &lt;/html&gt;
@@ -115,7 +115,7 @@
                     <thead>
                         <tr>
                             <th>Elemento</th>
-                            <th>FunciÃ³n</th>
+                            <th>Función</th>
                             <th>Ejemplo</th>
                         </tr>
                     </thead>
@@ -132,33 +132,33 @@
                         </tr>
                         <tr>
                             <td><code>&lt;head&gt;</code></td>
-                            <td>Contiene informaciÃ³n para el navegador.</td>
-                            <td>Metadatos, tÃ­tulo y enlaces a CSS.</td>
+                            <td>Contiene información para el navegador.</td>
+                            <td>Metadatos, título y enlaces a CSS.</td>
                         </tr>
                         <tr>
                             <td><code>&lt;body&gt;</code></td>
-                            <td>Contiene lo visible de la pÃ¡gina.</td>
-                            <td>TÃ­tulos, pÃ¡rrafos, imÃ¡genes, enlaces.</td>
+                            <td>Contiene lo visible de la página.</td>
+                            <td>Títulos, párrafos, imágenes, enlaces.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h3>Etiquetas bÃ¡sicas de contenido</h3>
+            <h3>Etiquetas básicas de contenido</h3>
 
             <div class="concept-grid">
                 <div class="card">
                     <div class="hoverline"></div>
-                    <h3>TÃ­tulos</h3>
+                    <h3>Títulos</h3>
                     <p>
                         Se usan desde <code>&lt;h1&gt;</code> hasta <code>&lt;h6&gt;</code>.
-                        El <code>&lt;h1&gt;</code> representa el tÃ­tulo principal.
+                        El <code>&lt;h1&gt;</code> representa el título principal.
                     </p>
                 </div>
 
                 <div class="card">
                     <div class="hoverline"></div>
-                    <h3>PÃ¡rrafos</h3>
+                    <h3>Párrafos</h3>
                     <p>
                         La etiqueta <code>&lt;p&gt;</code> se usa para escribir bloques de texto.
                     </p>
@@ -168,37 +168,37 @@
                     <div class="hoverline"></div>
                     <h3>Enlaces</h3>
                     <p>
-                        La etiqueta <code>&lt;a&gt;</code> permite crear enlaces hacia otras pÃ¡ginas o secciones.
+                        La etiqueta <code>&lt;a&gt;</code> permite crear enlaces hacia otras páginas o secciones.
                     </p>
                 </div>
 
                 <div class="card">
                     <div class="hoverline"></div>
-                    <h3>ImÃ¡genes</h3>
+                    <h3>Imágenes</h3>
                     <p>
-                        La etiqueta <code>&lt;img&gt;</code> permite mostrar imÃ¡genes dentro de la pÃ¡gina.
+                        La etiqueta <code>&lt;img&gt;</code> permite mostrar imágenes dentro de la página.
                     </p>
                 </div>
             </div>
 
             <div class="stepbox">
                 <strong>Ejemplo:</strong><br>
-                <code>&lt;h1&gt;Mi sitio web&lt;/h1&gt;</code> crea un tÃ­tulo principal.<br>
-                <code>&lt;p&gt;Bienvenidos a mi pÃ¡gina.&lt;/p&gt;</code> crea un pÃ¡rrafo.
+                <code>&lt;h1&gt;Mi sitio web&lt;/h1&gt;</code> crea un título principal.<br>
+                <code>&lt;p&gt;Bienvenidos a mi página.&lt;/p&gt;</code> crea un párrafo.
             </div>
         </section>
 
         <section id="semanticas">
-            <h2>3) Etiquetas semÃ¡nticas de HTML</h2>
+            <h2>3) Etiquetas semánticas de HTML</h2>
 
             <p class="big">
-                Las etiquetas semÃ¡nticas son elementos HTML que describen claramente el significado o propÃ³sito de una
-                parte de la pÃ¡gina.
+                Las etiquetas semánticas son elementos HTML que describen claramente el significado o propósito de una
+                parte de la página.
             </p>
 
             <p>
-                Antes era comÃºn crear casi toda la estructura usando muchos <code>&lt;div&gt;</code>. Aunque
-                <code>&lt;div&gt;</code> sigue siendo Ãºtil, HTML5 ofrece etiquetas mÃ¡s claras para organizar el
+                Antes era común crear casi toda la estructura usando muchos <code>&lt;div&gt;</code>. Aunque
+                <code>&lt;div&gt;</code> sigue siendo útil, HTML5 ofrece etiquetas más claras para organizar el
                 contenido.
             </p>
 
@@ -208,50 +208,50 @@
                         <tr>
                             <th>Etiqueta</th>
                             <th>Uso principal</th>
-                            <th>Ejemplo de aplicaciÃ³n</th>
+                            <th>Ejemplo de aplicación</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><code>&lt;header&gt;</code></td>
-                            <td>Representa la cabecera de la pÃ¡gina o de una secciÃ³n.</td>
-                            <td>Logo, tÃ­tulo principal o menÃº superior.</td>
+                            <td>Representa la cabecera de la página o de una sección.</td>
+                            <td>Logo, título principal o menú superior.</td>
                         </tr>
                         <tr>
                             <td><code>&lt;nav&gt;</code></td>
-                            <td>Contiene enlaces de navegaciÃ³n.</td>
-                            <td>MenÃº con enlaces a Inicio, Servicios y Contacto.</td>
+                            <td>Contiene enlaces de navegación.</td>
+                            <td>Menú con enlaces a Inicio, Servicios y Contacto.</td>
                         </tr>
                         <tr>
                             <td><code>&lt;main&gt;</code></td>
-                            <td>Contiene el contenido principal de la pÃ¡gina.</td>
-                            <td>La informaciÃ³n central del sitio.</td>
+                            <td>Contiene el contenido principal de la página.</td>
+                            <td>La información central del sitio.</td>
                         </tr>
                         <tr>
                             <td><code>&lt;section&gt;</code></td>
-                            <td>Agrupa contenido relacionado dentro de una pÃ¡gina.</td>
-                            <td>Una secciÃ³n de servicios, noticias o productos.</td>
+                            <td>Agrupa contenido relacionado dentro de una página.</td>
+                            <td>Una sección de servicios, noticias o productos.</td>
                         </tr>
                         <tr>
                             <td><code>&lt;article&gt;</code></td>
                             <td>Representa contenido independiente.</td>
-                            <td>Una noticia, publicaciÃ³n o entrada de blog.</td>
+                            <td>Una noticia, publicación o entrada de blog.</td>
                         </tr>
                         <tr>
                             <td><code>&lt;aside&gt;</code></td>
-                            <td>Contiene informaciÃ³n complementaria.</td>
+                            <td>Contiene información complementaria.</td>
                             <td>Barra lateral, enlaces relacionados o avisos.</td>
                         </tr>
                         <tr>
                             <td><code>&lt;footer&gt;</code></td>
-                            <td>Representa el pie de pÃ¡gina.</td>
-                            <td>Derechos, contacto o informaciÃ³n institucional.</td>
+                            <td>Representa el pie de página.</td>
+                            <td>Derechos, contacto o información institucional.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h3>Ejemplo de estructura semÃ¡ntica</h3>
+            <h3>Ejemplo de estructura semántica</h3>
 
             <div class="mono-block">
                 &lt;header&gt;
@@ -298,20 +298,20 @@
                     <main>
                         <article>
                             <h4>Contenido principal</h4>
-                            <p>Este bloque representa una secciÃ³n o artÃ­culo dentro del contenido principal.</p>
+                            <p>Este bloque representa una sección o artículo dentro del contenido principal.</p>
                         </article>
                     </main>
 
                     <footer>
-                        Pie de pÃ¡gina
+                        Pie de página
                     </footer>
                 </div>
             </div>
 
             <div class="extra-info">
-                <strong>Ventaja:</strong> usar etiquetas semÃ¡nticas mejora el orden del cÃ³digo, facilita el
+                <strong>Ventaja:</strong> usar etiquetas semánticas mejora el orden del código, facilita el
                 mantenimiento
-                y ayuda a que navegadores, buscadores y lectores de pantalla comprendan mejor la pÃ¡gina.
+                y ayuda a que navegadores, buscadores y lectores de pantalla comprendan mejor la página.
             </div>
         </section>
 
@@ -319,11 +319,11 @@
             <h2>4) Fundamentos de CSS</h2>
 
             <p>
-                CSS significa <strong>Cascading Style Sheets</strong>. Se usa para definir cÃ³mo se verÃ¡ una pÃ¡gina HTML.
-                Con CSS podemos cambiar colores, fuentes, tamaÃ±os, fondos, bordes, mÃ¡rgenes y mucho mÃ¡s.
+                CSS significa <strong>Cascading Style Sheets</strong>. Se usa para definir cómo se verá una página HTML.
+                Con CSS podemos cambiar colores, fuentes, tamaños, fondos, bordes, márgenes y mucho más.
             </p>
 
-            <h3>Sintaxis bÃ¡sica de CSS</h3>
+            <h3>Sintaxis básica de CSS</h3>
 
             <div class="mono-block">
                 selector {
@@ -332,9 +332,9 @@
             </div>
 
             <p>
-                El <strong>selector</strong> indica quÃ© elemento se quiere modificar.
-                La <strong>propiedad</strong> indica quÃ© aspecto se cambiarÃ¡.
-                El <strong>valor</strong> indica cÃ³mo se aplicarÃ¡ ese cambio.
+                El <strong>selector</strong> indica qué elemento se quiere modificar.
+                La <strong>propiedad</strong> indica qué aspecto se cambiará.
+                El <strong>valor</strong> indica cómo se aplicará ese cambio.
             </p>
 
             <h3>Ejemplo sencillo</h3>
@@ -347,8 +347,8 @@
             </div>
 
             <p>
-                Este cÃ³digo selecciona todos los tÃ­tulos <code>&lt;h1&gt;</code> y les aplica color azul y tamaÃ±o de
-                fuente de 32 pÃ­xeles.
+                Este código selecciona todos los títulos <code>&lt;h1&gt;</code> y les aplica color azul y tamaño de
+                fuente de 32 píxeles.
             </p>
 
             <h3>Formas de agregar CSS</h3>
@@ -358,25 +358,25 @@
                     <thead>
                         <tr>
                             <th>Forma</th>
-                            <th>DescripciÃ³n</th>
-                            <th>RecomendaciÃ³n</th>
+                            <th>Descripción</th>
+                            <th>Recomendación</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>CSS en lÃ­nea</td>
+                            <td>CSS en línea</td>
                             <td>Se escribe dentro de la etiqueta HTML usando <code>style</code>.</td>
-                            <td>No es lo mÃ¡s recomendable para proyectos grandes.</td>
+                            <td>No es lo más recomendable para proyectos grandes.</td>
                         </tr>
                         <tr>
                             <td>CSS interno</td>
                             <td>Se escribe dentro de una etiqueta <code>&lt;style&gt;</code> en el HTML.</td>
-                            <td>Ãštil para ejemplos pequeÃ±os o clases demostrativas.</td>
+                            <td>Útil para ejemplos pequeños o clases demostrativas.</td>
                         </tr>
                         <tr>
                             <td>CSS externo</td>
                             <td>Se escribe en un archivo separado, por ejemplo <code>estilos.css</code>.</td>
-                            <td>Es la forma mÃ¡s ordenada para proyectos reales.</td>
+                            <td>Es la forma más ordenada para proyectos reales.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -389,18 +389,18 @@
             </div>
 
             <div class="callout">
-                Esta lÃ­nea normalmente se coloca dentro de <code>&lt;head&gt;</code>. Sirve para conectar el documento
+                Esta línea normalmente se coloca dentro de <code>&lt;head&gt;</code>. Sirve para conectar el documento
                 HTML con el archivo CSS.
             </div>
         </section>
 
         <section id="clases">
-            <h2>5) Crear clases y aplicar estilos bÃ¡sicos</h2>
+            <h2>5) Crear clases y aplicar estilos básicos</h2>
 
             <p class="big">
                 Una <strong>clase</strong> es un nombre que podemos asignar a uno o varios elementos HTML para
                 aplicarles
-                estilos especÃ­ficos desde CSS.
+                estilos específicos desde CSS.
             </p>
 
             <p>
@@ -413,7 +413,7 @@
             <div class="mono-block">
                 &lt;div class="tarjeta"&gt;
                 &lt;h3&gt;HTML&lt;/h3&gt;
-                &lt;p&gt;HTML estructura el contenido de una pÃ¡gina web.&lt;/p&gt;
+                &lt;p&gt;HTML estructura el contenido de una página web.&lt;/p&gt;
                 &lt;/div&gt;
             </div>
 
@@ -441,7 +441,7 @@
                         <tr>
                             <th>Selector</th>
                             <th>Ejemplo</th>
-                            <th>Â¿Para quÃ© sirve?</th>
+                            <th>¿Para qué sirve?</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -458,7 +458,7 @@
                         <tr>
                             <td>ID</td>
                             <td><code>#principal { width: 90%; }</code></td>
-                            <td>Identifica un elemento Ãºnico. No debe repetirse en la misma pÃ¡gina.</td>
+                            <td>Identifica un elemento único. No debe repetirse en la misma página.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -473,11 +473,11 @@
                         Esta tarjeta representa un bloque HTML con una clase llamada <code>tarjeta</code>.
                         CSS le aplica fondo, borde, espacio interno y bordes redondeados.
                     </p>
-                    <a href="#" class="boton-demo">Ver mÃ¡s</a>
+                    <a href="#" class="boton-demo">Ver más</a>
                 </div>
             </div>
 
-            <h3>Estilos bÃ¡sicos comunes</h3>
+            <h3>Estilos básicos comunes</h3>
 
             <div class="concept-grid">
                 <div class="card">
@@ -496,7 +496,7 @@
                     <div class="hoverline"></div>
                     <span class="pill">Texto</span>
                     <h3>font-size</h3>
-                    <p>Cambia el tamaÃ±o de la letra.</p>
+                    <p>Cambia el tamaño de la letra.</p>
                     <div class="mono-block">
                         h1 {
                         font-size: 36px;
@@ -555,35 +555,35 @@
         </section>
 
         <section id="ejemplos">
-            <h2>6) Ejemplo completo: HTML semÃ¡ntico con clases y CSS</h2>
+            <h2>6) Ejemplo completo: HTML semántico con clases y CSS</h2>
 
             <p>
-                El siguiente ejemplo combina etiquetas semÃ¡nticas, clases y estilos bÃ¡sicos.
+                El siguiente ejemplo combina etiquetas semánticas, clases y estilos básicos.
             </p>
 
             <h3>HTML</h3>
 
             <div class="mono-block">
                 &lt;header class="encabezado"&gt;
-                &lt;h1&gt;Mi pÃ¡gina personal&lt;/h1&gt;
+                &lt;h1&gt;Mi página personal&lt;/h1&gt;
                 &lt;p&gt;Bienvenido a mi primer sitio web&lt;/p&gt;
                 &lt;/header&gt;
 
                 &lt;nav class="menu"&gt;
                 &lt;a href="#"&gt;Inicio&lt;/a&gt;
-                &lt;a href="#"&gt;Sobre mÃ­&lt;/a&gt;
+                &lt;a href="#"&gt;Sobre mí&lt;/a&gt;
                 &lt;a href="#"&gt;Contacto&lt;/a&gt;
                 &lt;/nav&gt;
 
                 &lt;main class="contenido"&gt;
                 &lt;section class="tarjeta"&gt;
-                &lt;h2&gt;Sobre mÃ­&lt;/h2&gt;
-                &lt;p&gt;Soy estudiante de diseÃ±o web y estoy aprendiendo HTML y CSS.&lt;/p&gt;
+                &lt;h2&gt;Sobre mí&lt;/h2&gt;
+                &lt;p&gt;Soy estudiante de diseño web y estoy aprendiendo HTML y CSS.&lt;/p&gt;
                 &lt;/section&gt;
 
                 &lt;section class="tarjeta destacada"&gt;
                 &lt;h2&gt;Mis intereses&lt;/h2&gt;
-                &lt;p&gt;Me interesa crear pÃ¡ginas modernas, ordenadas y fÃ¡ciles de usar.&lt;/p&gt;
+                &lt;p&gt;Me interesa crear páginas modernas, ordenadas y fáciles de usar.&lt;/p&gt;
                 &lt;/section&gt;
                 &lt;/main&gt;
 
@@ -648,38 +648,38 @@
             </div>
 
             <div class="callout">
-                En este ejemplo, las clases permiten aplicar estilos especÃ­ficos a diferentes partes de la pÃ¡gina.
+                En este ejemplo, las clases permiten aplicar estilos específicos a diferentes partes de la página.
                 Por ejemplo, <code>.encabezado</code>, <code>.menu</code>, <code>.tarjeta</code> y
                 <code>.pie</code>.
             </div>
 
-            <h3>Â¿Por quÃ© una secciÃ³n tiene dos clases?</h3>
+            <h3>¿Por qué una sección tiene dos clases?</h3>
 
             <div class="mono-block">
                 &lt;section class="tarjeta destacada"&gt;
             </div>
 
             <p>
-                Un elemento puede tener mÃ¡s de una clase. En este caso, la secciÃ³n recibe los estilos generales de
-                <code>.tarjeta</code> y ademÃ¡s los estilos especiales de <code>.destacada</code>.
+                Un elemento puede tener más de una clase. En este caso, la sección recibe los estilos generales de
+                <code>.tarjeta</code> y además los estilos especiales de <code>.destacada</code>.
             </p>
 
             <div class="extra-info">
-                <strong>Idea importante:</strong> las clases se pueden combinar para evitar repetir cÃ³digo y crear
-                variaciones de un mismo diseÃ±o.
+                <strong>Idea importante:</strong> las clases se pueden combinar para evitar repetir código y crear
+                variaciones de un mismo diseño.
             </div>
         </section>
 
         <section id="buenas-practicas">
-            <h2>7) Buenas prÃ¡cticas iniciales</h2>
+            <h2>7) Buenas prácticas iniciales</h2>
 
             <div class="concept-grid">
                 <div class="card">
                     <div class="hoverline"></div>
                     <h3>Usar nombres claros</h3>
                     <p>
-                        Una clase llamada <code>.tarjeta</code> es mÃ¡s clara que una llamada <code>.caja1</code>.
-                        Los nombres deben explicar el propÃ³sito del elemento.
+                        Una clase llamada <code>.tarjeta</code> es más clara que una llamada <code>.caja1</code>.
+                        Los nombres deben explicar el propósito del elemento.
                     </p>
                 </div>
 
@@ -687,7 +687,7 @@
                     <div class="hoverline"></div>
                     <h3>Separar estructura y estilo</h3>
                     <p>
-                        HTML debe encargarse de la estructura. CSS debe encargarse de la presentaciÃ³n visual.
+                        HTML debe encargarse de la estructura. CSS debe encargarse de la presentación visual.
                     </p>
                 </div>
 
@@ -695,28 +695,28 @@
                     <div class="hoverline"></div>
                     <h3>No abusar de div</h3>
                     <p>
-                        Cuando exista una etiqueta semÃ¡ntica adecuada, es mejor usarla en lugar de llenar todo de
+                        Cuando exista una etiqueta semántica adecuada, es mejor usarla en lugar de llenar todo de
                         <code>&lt;div&gt;</code>.
                     </p>
                 </div>
 
                 <div class="card">
                     <div class="hoverline"></div>
-                    <h3>Ordenar el cÃ³digo</h3>
+                    <h3>Ordenar el código</h3>
                     <p>
-                        La indentaciÃ³n ayuda a leer mejor la estructura del documento y a detectar errores.
+                        La indentación ayuda a leer mejor la estructura del documento y a detectar errores.
                     </p>
                 </div>
             </div>
 
             <div class="extra-info">
-                <strong>Consejo para principiantes:</strong> antes de agregar colores y efectos, asegÃºrate de que la
-                estructura HTML estÃ© bien organizada.
+                <strong>Consejo para principiantes:</strong> antes de agregar colores y efectos, asegúrate de que la
+                estructura HTML esté bien organizada.
             </div>
         </section>
 
         <section id="practica">
-            <h2>8) PrÃ¡ctica de repaso</h2>
+            <h2>8) Práctica de repaso</h2>
 
             <p>
                 Responde las preguntas y luego verifica tus respuestas.
@@ -724,28 +724,28 @@
 
             <div class="quiz" id="quiz">
                 <div class="q">
-                    <strong>1.</strong> Â¿CuÃ¡l es la funciÃ³n principal de HTML?
+                    <strong>1.</strong> ¿Cuál es la función principal de HTML?
                     <label><input type="radio" name="q1" value="a"> Dar estilos visuales avanzados</label>
-                    <label><input type="radio" name="q1" value="b"> Crear la estructura y contenido de la pÃ¡gina</label>
+                    <label><input type="radio" name="q1" value="b"> Crear la estructura y contenido de la página</label>
                     <label><input type="radio" name="q1" value="c"> Programar bases de datos</label>
                 </div>
 
                 <div class="q">
-                    <strong>2.</strong> Â¿CuÃ¡l es la funciÃ³n principal de CSS?
-                    <label><input type="radio" name="q2" value="a"> Cambiar la apariencia visual de la pÃ¡gina</label>
+                    <strong>2.</strong> ¿Cuál es la función principal de CSS?
+                    <label><input type="radio" name="q2" value="a"> Cambiar la apariencia visual de la página</label>
                     <label><input type="radio" name="q2" value="b"> Crear servidores web</label>
                     <label><input type="radio" name="q2" value="c"> Reemplazar el contenido HTML</label>
                 </div>
 
                 <div class="q">
-                    <strong>3.</strong> Â¿CuÃ¡l de estas etiquetas es semÃ¡ntica?
+                    <strong>3.</strong> ¿Cuál de estas etiquetas es semántica?
                     <label><input type="radio" name="q3" value="a"> <code>&lt;header&gt;</code></label>
                     <label><input type="radio" name="q3" value="b"> <code>&lt;color&gt;</code></label>
                     <label><input type="radio" name="q3" value="c"> <code>&lt;blue&gt;</code></label>
                 </div>
 
                 <div class="q">
-                    <strong>4.</strong> Â¿CÃ³mo se escribe una clase en HTML?
+                    <strong>4.</strong> ¿Cómo se escribe una clase en HTML?
                     <label><input type="radio" name="q4" value="a"> <code>&lt;div css="tarjeta"&gt;</code></label>
                     <label><input type="radio" name="q4" value="b"> <code>&lt;div class="tarjeta"&gt;</code></label>
                     <label><input type="radio" name="q4" value="c">
@@ -753,7 +753,7 @@
                 </div>
 
                 <div class="q">
-                    <strong>5.</strong> Â¿CÃ³mo se selecciona una clase en CSS?
+                    <strong>5.</strong> ¿Cómo se selecciona una clase en CSS?
                     <label><input type="radio" name="q5" value="a"> <code>tarjeta { }</code></label>
                     <label><input type="radio" name="q5" value="b"> <code>#tarjeta { }</code></label>
                     <label><input type="radio" name="q5" value="c"> <code>.tarjeta { }</code></label>
@@ -772,14 +772,14 @@
             <h2>9) Cierre conceptual</h2>
 
             <p>
-                HTML y CSS son la base del diseÃ±o web. HTML permite definir la estructura de una pÃ¡gina, mientras que
-                CSS permite transformarla visualmente para que sea mÃ¡s clara, atractiva y fÃ¡cil de usar.
+                HTML y CSS son la base del diseño web. HTML permite definir la estructura de una página, mientras que
+                CSS permite transformarla visualmente para que sea más clara, atractiva y fácil de usar.
             </p>
 
             <p>
-                Las etiquetas semÃ¡nticas ayudan a crear pÃ¡ginas mejor organizadas, y las clases permiten aplicar estilos
-                de forma ordenada y reutilizable. Comprender esta relaciÃ³n es esencial antes de avanzar hacia temas como
-                Flexbox, diseÃ±o responsivo e interacciÃ³n con JavaScript.
+                Las etiquetas semánticas ayudan a crear páginas mejor organizadas, y las clases permiten aplicar estilos
+                de forma ordenada y reutilizable. Comprender esta relación es esencial antes de avanzar hacia temas como
+                Flexbox, diseño responsivo e interacción con JavaScript.
             </p>
 
             <div class="extra-info">
@@ -789,7 +789,7 @@
         </section>
 
         <section id="practicaGuiada">
-            <h2>10) PrÃ¡ctica Guiada</h2>
+            <h2>10) Práctica Guiada</h2>
             <div class="embed-frame">
                 <iframe loading="lazy" src="https://www.canva.com/design/DAF8DVLkNws/DwM0bCLFw4Fw4WNiouT7DQ/view?embed"
                     allowfullscreen="allowfullscreen" allow="fullscreen">
@@ -800,7 +800,7 @@
     </div>
 
     <footer>
-        Clase 1 - Fundamentos de HTML y CSS | Material de apoyo para DiseÃ±o Web
+        Clase 1 - Fundamentos de HTML y CSS | Material de apoyo para Diseño Web
     </footer>
 
     <script>
@@ -831,10 +831,10 @@
                 resultado.textContent = `Excelente. Obtuviste ${puntos}/5. Comprendiste muy bien los fundamentos de HTML y CSS.`;
             } else if (puntos >= 3) {
                 resultado.classList.add("warn");
-                resultado.textContent = `Vas bien. Obtuviste ${puntos}/5. Conviene repasar etiquetas semÃ¡nticas, clases y selectores.`;
+                resultado.textContent = `Vas bien. Obtuviste ${puntos}/5. Conviene repasar etiquetas semánticas, clases y selectores.`;
             } else {
                 resultado.classList.add("bad");
-                resultado.textContent = `Obtuviste ${puntos}/5. Te recomiendo volver a leer la clase y practicar los ejemplos bÃ¡sicos.`;
+                resultado.textContent = `Obtuviste ${puntos}/5. Te recomiendo volver a leer la clase y practicar los ejemplos básicos.`;
             }
         }
 

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DiseÃ±o Web - Clase 2 - CSS Flexbox</title>
+  <title>Diseño Web - Clase 2 - CSS Flexbox</title>
 
   <link rel="icon" href="img/internet.png" type="image/png">
     <link rel="stylesheet" href="css/styles.css">
@@ -15,32 +15,32 @@
 
   <header>
     <h1>Clase 2: CSS Flexbox</h1>
-    <p class="subtitle">OrganizaciÃ³n, alineaciÃ³n y distribuciÃ³n flexible de elementos en una pÃ¡gina web</p>
-    <p class="subtitle"><em>"Flexbox convierte el desorden visual en estructura, alineaciÃ³n y diseÃ±o adaptable"</em></p>
+    <p class="subtitle">Organización, alineación y distribución flexible de elementos en una página web</p>
+    <p class="subtitle"><em>"Flexbox convierte el desorden visual en estructura, alineación y diseño adaptable"</em></p>
 
     <div class="anchorbar">
-      <a href="#introduccion">IntroducciÃ³n</a>
+      <a href="#introduccion">Introducción</a>
       <a href="#modelo">Modelo Flexbox</a>
       <a href="#propiedades">Propiedades</a>
       <a href="#ejemplos">Ejemplos</a>
-      <a href="#practica">PrÃ¡ctica</a>
+      <a href="#practica">Práctica</a>
     </div>
   </header>
 
   <div class="container">
 
     <section id="introduccion">
-      <h2>1) IntroducciÃ³n a Flexbox</h2>
+      <h2>1) Introducción a Flexbox</h2>
 
       <p class="big">
-        <strong>Flexbox</strong> es un modelo de diseÃ±o de CSS que permite organizar elementos
+        <strong>Flexbox</strong> es un modelo de diseño de CSS que permite organizar elementos
         dentro de un contenedor de forma flexible. Sirve para alinear, distribuir y adaptar elementos
-        sin depender de tÃ©cnicas antiguas como tablas, flotantes o mÃ¡rgenes excesivos.
+        sin depender de técnicas antiguas como tablas, flotantes o márgenes excesivos.
       </p>
 
       <p>
-        En una pÃ¡gina web moderna es comÃºn necesitar que varios elementos aparezcan uno al lado del otro,
-        se centren, tengan espacios uniformes o bajen a otra lÃ­nea cuando la pantalla es pequeÃ±a.
+        En una página web moderna es común necesitar que varios elementos aparezcan uno al lado del otro,
+        se centren, tengan espacios uniformes o bajen a otra línea cuando la pantalla es pequeña.
         Flexbox facilita todo esto con pocas propiedades.
       </p>
 
@@ -57,7 +57,7 @@
 
         <div class="card">
           <div class="hoverline"></div>
-          <h3>AnalogÃ­a</h3>
+          <h3>Analogía</h3>
           <p>
             Imagina una fila de estudiantes en el aula. El docente puede pedirles que se alineen al centro,
             que se separen uniformemente o que formen otra fila si ya no caben. Eso es similar a lo que hace
@@ -69,14 +69,14 @@
           <div class="hoverline"></div>
           <h3>Uso frecuente</h3>
           <p>
-            Flexbox se usa para menÃºs, tarjetas, formularios, galerÃ­as, secciones de contenido,
-            botones, barras superiores, perfiles y diseÃ±os responsivos.
+            Flexbox se usa para menús, tarjetas, formularios, galerías, secciones de contenido,
+            botones, barras superiores, perfiles y diseños responsivos.
           </p>
         </div>
       </div>
 
       <div class="extra-info">
-        <strong>Idea para recordar:</strong> Flexbox no se aplica directamente a todos los elementos de la pÃ¡gina,
+        <strong>Idea para recordar:</strong> Flexbox no se aplica directamente a todos los elementos de la página,
         sino al <strong>contenedor</strong> que queremos controlar. Los hijos de ese contenedor son los que se
         ordenan y alinean.
       </div>
@@ -86,9 +86,9 @@
       <h2>2) El modelo Flexbox</h2>
 
       <p>
-        Para entender Flexbox, primero debemos conocer tres conceptos bÃ¡sicos:
+        Para entender Flexbox, primero debemos conocer tres conceptos básicos:
         <strong>contenedor flexible</strong>, <strong>elementos flexibles</strong> y <strong>ejes de
-          alineaciÃ³n</strong>.
+          alineación</strong>.
       </p>
 
       <div class="table-wrap">
@@ -96,7 +96,7 @@
           <thead>
             <tr>
               <th>Concepto</th>
-              <th>DescripciÃ³n</th>
+              <th>Descripción</th>
               <th>Ejemplo sencillo</th>
             </tr>
           </thead>
@@ -113,7 +113,7 @@
             </tr>
             <tr>
               <td>Eje principal</td>
-              <td>Es la direcciÃ³n principal en la que se colocan los elementos.</td>
+              <td>Es la dirección principal en la que se colocan los elementos.</td>
               <td>Horizontal si usamos <code>flex-direction: row;</code>.</td>
             </tr>
             <tr>
@@ -134,11 +134,11 @@
       </div>
 
       <p>
-        Con esa sola lÃ­nea, los elementos hijos dejan de comportarse como bloques normales y pasan a distribuirse
-        segÃºn las reglas de Flexbox.
+        Con esa sola línea, los elementos hijos dejan de comportarse como bloques normales y pasan a distribuirse
+        según las reglas de Flexbox.
       </p>
 
-      <div class="demo-title">DemostraciÃ³n visual: elementos en fila</div>
+      <div class="demo-title">Demostración visual: elementos en fila</div>
 
       <div class="flex-demo demo-row">
         <div class="demo-box">1</div>
@@ -148,7 +148,7 @@
 
       <div class="callout">
         En HTML, los <code>div</code> normalmente aparecen uno debajo del otro. Pero cuando su padre tiene
-        <code>display: flex;</code>, pueden colocarse fÃ¡cilmente en fila.
+        <code>display: flex;</code>, pueden colocarse fácilmente en fila.
       </div>
     </section>
 
@@ -157,7 +157,7 @@
 
       <p>
         Flexbox tiene varias propiedades. Algunas se aplican al <strong>contenedor padre</strong> y otras a los
-        <strong>elementos hijos</strong>. En esta clase nos centraremos en las mÃ¡s usadas para construir diseÃ±os.
+        <strong>elementos hijos</strong>. En esta clase nos centraremos en las más usadas para construir diseños.
       </p>
 
       <div class="concept-grid">
@@ -166,7 +166,7 @@
           <span class="pill">Contenedor</span>
           <h3>display: flex</h3>
           <p>
-            Activa Flexbox en el contenedor. Es el punto de partida para usar este modelo de diseÃ±o.
+            Activa Flexbox en el contenedor. Es el punto de partida para usar este modelo de diseño.
           </p>
           <div class="mono-block">
             .contenedor {
@@ -180,7 +180,7 @@
           <span class="pill">Contenedor</span>
           <h3>flex-direction</h3>
           <p>
-            Define la direcciÃ³n en la que se colocan los elementos: en fila o en columna.
+            Define la dirección en la que se colocan los elementos: en fila o en columna.
           </p>
           <div class="mono-block">
             .contenedor {
@@ -222,7 +222,7 @@
           <span class="pill">Contenedor</span>
           <h3>gap</h3>
           <p>
-            Agrega separaciÃ³n uniforme entre los elementos sin tener que usar mÃ¡rgenes en cada hijo.
+            Agrega separación uniforme entre los elementos sin tener que usar márgenes en cada hijo.
           </p>
           <div class="mono-block">
             .contenedor {
@@ -236,7 +236,7 @@
           <span class="pill">Contenedor</span>
           <h3>flex-wrap</h3>
           <p>
-            Permite que los elementos bajen a una nueva lÃ­nea cuando no caben en una sola fila.
+            Permite que los elementos bajen a una nueva línea cuando no caben en una sola fila.
           </p>
           <div class="mono-block">
             .contenedor {
@@ -253,8 +253,8 @@
           <thead>
             <tr>
               <th>Valor</th>
-              <th>Â¿QuÃ© hace?</th>
-              <th>Uso tÃ­pico</th>
+              <th>¿Qué hace?</th>
+              <th>Uso típico</th>
             </tr>
           </thead>
           <tbody>
@@ -271,17 +271,17 @@
             <tr>
               <td><code>space-between</code></td>
               <td>Deja el mayor espacio posible entre elementos.</td>
-              <td>MenÃºs con logo a un lado y enlaces al otro.</td>
+              <td>Menús con logo a un lado y enlaces al otro.</td>
             </tr>
             <tr>
               <td><code>space-around</code></td>
               <td>Coloca espacio alrededor de cada elemento.</td>
-              <td>DistribuciÃ³n visual mÃ¡s abierta.</td>
+              <td>Distribución visual más abierta.</td>
             </tr>
             <tr>
               <td><code>space-evenly</code></td>
               <td>Distribuye espacios iguales entre todos los elementos.</td>
-              <td>GalerÃ­as o grupos de botones.</td>
+              <td>Galerías o grupos de botones.</td>
             </tr>
           </tbody>
         </table>
@@ -294,7 +294,7 @@
           <thead>
             <tr>
               <th>Valor</th>
-              <th>Â¿QuÃ© hace?</th>
+              <th>¿Qué hace?</th>
               <th>Ejemplo de uso</th>
             </tr>
           </thead>
@@ -302,7 +302,7 @@
             <tr>
               <td><code>stretch</code></td>
               <td>Estira los elementos para ocupar el alto disponible.</td>
-              <td>DiseÃ±os donde las tarjetas deben tener una altura uniforme.</td>
+              <td>Diseños donde las tarjetas deben tener una altura uniforme.</td>
             </tr>
             <tr>
               <td><code>center</code></td>
@@ -317,7 +317,7 @@
             <tr>
               <td><code>flex-end</code></td>
               <td>Alinea los elementos al final del eje transversal.</td>
-              <td>Cuando se desea alineaciÃ³n inferior.</td>
+              <td>Cuando se desea alineación inferior.</td>
             </tr>
           </tbody>
         </table>
@@ -327,7 +327,7 @@
     <section id="ejemplos">
       <h2>4) Ejemplos visuales con Flexbox</h2>
 
-      <h3>Ejemplo 1: DirecciÃ³n en fila</h3>
+      <h3>Ejemplo 1: Dirección en fila</h3>
       <p>
         Con <code>flex-direction: row;</code>, los elementos se colocan de izquierda a derecha.
         Este es el comportamiento predeterminado.
@@ -347,7 +347,7 @@
         <div class="demo-box">JS</div>
       </div>
 
-      <h3>Ejemplo 2: DirecciÃ³n en columna</h3>
+      <h3>Ejemplo 2: Dirección en columna</h3>
       <p>
         Con <code>flex-direction: column;</code>, los elementos se colocan de arriba hacia abajo.
       </p>
@@ -368,7 +368,7 @@
 
       <h3>Ejemplo 3: Centrado horizontal y vertical</h3>
       <p>
-        Uno de los usos mÃ¡s populares de Flexbox es centrar elementos fÃ¡cilmente.
+        Uno de los usos más populares de Flexbox es centrar elementos fácilmente.
       </p>
 
       <div class="mono-block">
@@ -385,7 +385,7 @@
 
       <h3>Ejemplo 4: Separar elementos con space-between</h3>
       <p>
-        Este valor es muy Ãºtil para barras de navegaciÃ³n: coloca un elemento al inicio y otro al final.
+        Este valor es muy útil para barras de navegación: coloca un elemento al inicio y otro al final.
       </p>
 
       <div class="mono-block">
@@ -398,13 +398,13 @@
 
       <div class="flex-demo demo-between">
         <div class="demo-box">Logo</div>
-        <div class="demo-box">MenÃº</div>
+        <div class="demo-box">Menú</div>
       </div>
 
       <h3>Ejemplo 5: Tarjetas responsivas con flex-wrap</h3>
       <p>
-        Cuando los elementos no caben en una sola lÃ­nea, <code>flex-wrap: wrap;</code> permite que bajen
-        automÃ¡ticamente a otra fila.
+        Cuando los elementos no caben en una sola línea, <code>flex-wrap: wrap;</code> permite que bajen
+        automáticamente a otra fila.
       </p>
 
       <div class="mono-block">
@@ -432,11 +432,11 @@
       <h2>5) Aplicaciones reales de Flexbox</h2>
 
       <p>
-        Flexbox no es solo una teorÃ­a. Se usa constantemente en pÃ¡ginas reales porque resuelve problemas
-        comunes de diseÃ±o.
+        Flexbox no es solo una teoría. Se usa constantemente en páginas reales porque resuelve problemas
+        comunes de diseño.
       </p>
 
-      <h3>AplicaciÃ³n 1: Barra de navegaciÃ³n</h3>
+      <h3>Aplicación 1: Barra de navegación</h3>
 
       <div class="mini-navbar">
         <strong>Ricaldone</strong>
@@ -458,16 +458,16 @@
         }
       </div>
 
-      <h3>AplicaciÃ³n 2: Tarjeta de perfil</h3>
+      <h3>Aplicación 2: Tarjeta de perfil</h3>
 
       <div class="profile-card">
         <div class="avatar">RW</div>
 
         <div class="profile-info">
-          <h4>Estudiante de DiseÃ±o Web</h4>
+          <h4>Estudiante de Diseño Web</h4>
           <p>
-            Esta tarjeta usa Flexbox para colocar el avatar a la izquierda y la informaciÃ³n a la derecha.
-            Si la pantalla es pequeÃ±a, los elementos pueden acomodarse mejor.
+            Esta tarjeta usa Flexbox para colocar el avatar a la izquierda y la información a la derecha.
+            Si la pantalla es pequeña, los elementos pueden acomodarse mejor.
           </p>
         </div>
       </div>
@@ -481,21 +481,21 @@
         }
       </div>
 
-      <h3>AplicaciÃ³n 3: Contenido principal y barra lateral</h3>
+      <h3>Aplicación 3: Contenido principal y barra lateral</h3>
 
       <div class="layout-example">
         <div class="layout-main">
           <h3>Contenido principal</h3>
           <p>
-            AquÃ­ podrÃ­a ir el contenido mÃ¡s importante de una pÃ¡gina: una noticia, una clase,
-            un artÃ­culo o una explicaciÃ³n.
+            Aquí podría ir el contenido más importante de una página: una noticia, una clase,
+            un artículo o una explicación.
           </p>
         </div>
 
         <div class="layout-aside">
           <h3>Barra lateral</h3>
           <p>
-            AquÃ­ podrÃ­an ir enlaces, avisos, recursos o informaciÃ³n complementaria.
+            Aquí podrían ir enlaces, avisos, recursos o información complementaria.
           </p>
         </div>
       </div>
@@ -517,8 +517,8 @@
       </div>
 
       <div class="extra-info">
-        <strong>ObservaciÃ³n importante:</strong> la propiedad <code>flex</code> puede controlar cuÃ¡nto crece,
-        cuÃ¡nto se reduce y cuÃ¡l es el tamaÃ±o base de un elemento.
+        <strong>Observación importante:</strong> la propiedad <code>flex</code> puede controlar cuánto crece,
+        cuánto se reduce y cuál es el tamaño base de un elemento.
       </div>
     </section>
 
@@ -530,7 +530,7 @@
           <div class="hoverline"></div>
           <h3>Error 1: aplicar Flexbox al elemento equivocado</h3>
           <p>
-            Flexbox debe aplicarse al contenedor padre. Si se aplica a un hijo individual, no ordenarÃ¡
+            Flexbox debe aplicarse al contenedor padre. Si se aplica a un hijo individual, no ordenará
             a sus hermanos.
           </p>
         </div>
@@ -549,19 +549,19 @@
           <h3>Error 3: confundir los ejes</h3>
           <p>
             <code>justify-content</code> trabaja sobre el eje principal y <code>align-items</code>
-            sobre el eje transversal. Si cambia <code>flex-direction</code>, tambiÃ©n cambia la lÃ³gica.
+            sobre el eje transversal. Si cambia <code>flex-direction</code>, también cambia la lógica.
           </p>
         </div>
       </div>
 
       <div class="extra-info">
-        <strong>Consejo prÃ¡ctico:</strong> antes de escribir muchas propiedades, identifica primero cuÃ¡l es el
-        contenedor, cuÃ¡les son los hijos y en quÃ© direcciÃ³n quieres ordenarlos.
+        <strong>Consejo práctico:</strong> antes de escribir muchas propiedades, identifica primero cuál es el
+        contenedor, cuáles son los hijos y en qué dirección quieres ordenarlos.
       </div>
     </section>
 
     <section id="practica">
-      <h2>7) PrÃ¡ctica de repaso</h2>
+      <h2>7) Práctica de repaso</h2>
 
       <p>
         Responde las preguntas y luego verifica tus respuestas.
@@ -569,37 +569,37 @@
 
       <div class="quiz" id="quiz">
         <div class="q">
-          <strong>1.</strong> Â¿QuÃ© propiedad activa Flexbox en un contenedor?
+          <strong>1.</strong> ¿Qué propiedad activa Flexbox en un contenedor?
           <label><input type="radio" name="q1" value="a"> <code>position: flex;</code></label>
           <label><input type="radio" name="q1" value="b"> <code>display: flex;</code></label>
           <label><input type="radio" name="q1" value="c"> <code>flexbox: true;</code></label>
         </div>
 
         <div class="q">
-          <strong>2.</strong> Â¿QuÃ© propiedad se usa para separar elementos de forma uniforme?
+          <strong>2.</strong> ¿Qué propiedad se usa para separar elementos de forma uniforme?
           <label><input type="radio" name="q2" value="a"> <code>gap</code></label>
           <label><input type="radio" name="q2" value="b"> <code>line-height</code></label>
           <label><input type="radio" name="q2" value="c"> <code>text-align</code></label>
         </div>
 
         <div class="q">
-          <strong>3.</strong> Â¿QuÃ© propiedad permite que los elementos bajen a otra lÃ­nea si no caben?
+          <strong>3.</strong> ¿Qué propiedad permite que los elementos bajen a otra línea si no caben?
           <label><input type="radio" name="q3" value="a"> <code>flex-wrap</code></label>
           <label><input type="radio" name="q3" value="b"> <code>font-wrap</code></label>
           <label><input type="radio" name="q3" value="c"> <code>box-wrap</code></label>
         </div>
 
         <div class="q">
-          <strong>4.</strong> Â¿QuÃ© propiedad distribuye elementos en el eje principal?
+          <strong>4.</strong> ¿Qué propiedad distribuye elementos en el eje principal?
           <label><input type="radio" name="q4" value="a"> <code>justify-content</code></label>
           <label><input type="radio" name="q4" value="b"> <code>align-text</code></label>
           <label><input type="radio" name="q4" value="c"> <code>vertical-align</code></label>
         </div>
 
         <div class="q">
-          <strong>5.</strong> Â¿CuÃ¡l es un uso comÃºn de Flexbox?
+          <strong>5.</strong> ¿Cuál es un uso común de Flexbox?
           <label><input type="radio" name="q5" value="a"> Crear bases de datos</label>
-          <label><input type="radio" name="q5" value="b"> DiseÃ±ar menÃºs, tarjetas y secciones responsivas</label>
+          <label><input type="radio" name="q5" value="b"> Diseñar menús, tarjetas y secciones responsivas</label>
           <label><input type="radio" name="q5" value="c"> Instalar servidores web</label>
         </div>
 
@@ -617,27 +617,27 @@
       <h2>8) Cierre</h2>
 
       <p>
-        Flexbox es una herramienta fundamental para el diseÃ±o web moderno. Permite organizar elementos con mayor
-        facilidad, mejorar la presentaciÃ³n visual y construir interfaces que se adapten mejor a diferentes tamaÃ±os
+        Flexbox es una herramienta fundamental para el diseño web moderno. Permite organizar elementos con mayor
+        facilidad, mejorar la presentación visual y construir interfaces que se adapten mejor a diferentes tamaños
         de pantalla.
       </p>
 
       <p>
-        Lo mÃ¡s importante es recordar que Flexbox funciona a partir de una relaciÃ³n entre un contenedor padre y
-        sus elementos hijos. Al comprender esta relaciÃ³n, propiedades como <code>justify-content</code>,
-        <code>align-items</code>, <code>gap</code> y <code>flex-wrap</code> se vuelven mucho mÃ¡s fÃ¡ciles de aplicar.
+        Lo más importante es recordar que Flexbox funciona a partir de una relación entre un contenedor padre y
+        sus elementos hijos. Al comprender esta relación, propiedades como <code>justify-content</code>,
+        <code>align-items</code>, <code>gap</code> y <code>flex-wrap</code> se vuelven mucho más fáciles de aplicar.
       </p>
 
       <div class="extra-info">
-        <strong>Para recordar:</strong> Flexbox no solo sirve para â€œponer elementos en filaâ€.
-        Sirve para pensar el diseÃ±o de forma mÃ¡s ordenada, flexible y adaptable.
+        <strong>Para recordar:</strong> Flexbox no solo sirve para “poner elementos en fila”.
+        Sirve para pensar el diseño de forma más ordenada, flexible y adaptable.
       </div>
     </section>
 
   </div>
 
   <footer>
-    Clase 2 - CSS Flexbox | Material de apoyo para DiseÃ±o Web
+    Clase 2 - CSS Flexbox | Material de apoyo para Diseño Web
   </footer>
 
   <script>
