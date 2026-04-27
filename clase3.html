@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diseño Web - Clase 3 - Bootstrap</title>
+
+  <link rel="icon" href="img/internet.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/clase.css">
+</head>
+
+<body class="class-page">
+
+  <header>
+    <h1>Clase 3: Bootstrap</h1>
+    <p class="subtitle">Framework CSS para construir interfaces modernas de forma rápida y responsiva</p>
+    <p class="subtitle"><em>"Bootstrap acelera el diseño web al ofrecer componentes, utilidades y una estructura lista
+        para usar"</em></p>
+
+    <div class="anchorbar">
+      <a href="#introduccion">Introducción</a>
+      <a href="#que-es">¿Qué es?</a>
+      <a href="#instalacion">Instalación</a>
+      <a href="#grid">Grid</a>
+      <a href="#componentes">Componentes</a>
+      <a href="#ejemplos">Ejemplos</a>
+      <a href="#practica">Práctica</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <section id="introduccion">
+      <h2>1) Introducción a Bootstrap</h2>
+
+      <p class="big">
+        <strong>Bootstrap</strong> es un framework front-end que ayuda a crear páginas web con una apariencia limpia,
+        moderna y adaptable a diferentes tamaños de pantalla.
+      </p>
+
+      <p>
+        En lugar de escribir todo el CSS desde cero, Bootstrap ofrece clases ya preparadas para trabajar con botones,
+        tarjetas, formularios, menús, rejillas, márgenes, espaciados y muchos otros elementos visuales.
+      </p>
+
+      <div class="concept-grid">
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>Idea central</h3>
+          <p>
+            Bootstrap permite avanzar más rápido porque ya incluye estilos y componentes listos para usar.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>Versión actual</h3>
+          <p>
+            La rama principal actual de Bootstrap es la <strong>5.x</strong> y la última actualización publicada
+            en la documentación oficial es la <strong>5.3.8</strong> (hasta el momento de la escritura de este material).
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>Enfoque responsivo</h3>
+          <p>
+            Bootstrap fue diseñado con enfoque <strong>mobile-first</strong>, por lo que facilita crear sitios que
+            funcionen bien en celular, tablet y computadora.
+          </p>
+        </div>
+      </div>
+
+      <div class="extra-info">
+        <strong>Idea para recordar:</strong> Bootstrap no reemplaza HTML, CSS o JavaScript.
+        Más bien, se apoya en ellos para hacer más rápido y ordenado el desarrollo de interfaces.
+      </div>
+    </section>
+
+    <section id="que-es">
+      <h2>2) ¿Qué es Bootstrap y para qué sirve?</h2>
+
+      <p>
+        Bootstrap es una colección de clases CSS, componentes visuales y utilidades que se agregan directamente al HTML.
+        Esto permite diseñar páginas más rápidamente sin tener que crear cada estilo desde cero.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Elemento</th>
+              <th>¿Qué ofrece Bootstrap?</th>
+              <th>Ejemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Grid</td>
+              <td>Distribución de columnas responsivas.</td>
+              <td><code>container</code>, <code>row</code>, <code>col</code></td>
+            </tr>
+            <tr>
+              <td>Botones</td>
+              <td>Botones con estilos listos para diferentes acciones.</td>
+              <td><code>btn btn-primary</code></td>
+            </tr>
+            <tr>
+              <td>Tarjetas</td>
+              <td>Bloques visuales para agrupar contenido.</td>
+              <td><code>card</code></td>
+            </tr>
+            <tr>
+              <td>Formularios</td>
+              <td>Campos con una apariencia uniforme y moderna.</td>
+              <td><code>form-control</code></td>
+            </tr>
+            <tr>
+              <td>Utilidades</td>
+              <td>Clases rápidas para márgenes, colores, alineación y espaciado.</td>
+              <td><code>mt-3</code>, <code>p-4</code>, <code>text-center</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>¿Por qué muchos desarrolladores lo usan?</h3>
+      <p>
+        Porque ayuda a construir interfaces funcionales en menos tiempo, mantiene una apariencia consistente
+        y reduce la cantidad de CSS personalizado que se debe escribir.
+      </p>
+
+      <div class="callout">
+        Bootstrap 5 ya no depende de <strong>jQuery</strong>, lo que simplifica su uso con JavaScript moderno.
+      </div>
+    </section>
+
+    <section id="instalacion">
+      <h2>3) ¿Cómo se instala Bootstrap?</h2>
+
+      <p>
+        Una forma rápida de comenzar es enlazar Bootstrap desde un CDN. Así se puede usar en una página
+        sin descargar archivos manualmente.
+      </p>
+
+      <h3>Ejemplo básico de instalación con CDN</h3>
+
+      <div class="mono-block">
+        &lt;!doctype html&gt;
+        &lt;html lang="es"&gt;
+        &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+        &lt;title&gt;Mi página con Bootstrap&lt;/title&gt;
+
+        &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+
+        &lt;h1 class="text-center text-primary mt-4"&gt;Hola Bootstrap&lt;/h1&gt;
+
+        &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+      </div>
+
+      <p>
+        En este ejemplo, el archivo CSS de Bootstrap da estilo a la página y el archivo JavaScript activa
+        componentes interactivos como menús desplegables, modales o carruseles.
+      </p>
+
+      <div class="stepbox">
+        <strong>Paso a paso:</strong>
+        <ol>
+          <li>Crear el archivo HTML.</li>
+          <li>Agregar el enlace del CSS de Bootstrap dentro de <code>&lt;head&gt;</code>.</li>
+          <li>Agregar el script de Bootstrap al final del <code>&lt;body&gt;</code>.</li>
+          <li>Usar las clases de Bootstrap directamente en las etiquetas HTML.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="grid">
+      <h2>4) Sistema de grid de Bootstrap</h2>
+
+      <p class="big">
+        El sistema de grid de Bootstrap permite dividir la página en columnas. Está construido sobre
+        <strong>Flexbox</strong> y facilita el diseño responsivo.
+      </p>
+
+      <p>
+        La estructura básica del grid utiliza tres elementos:
+        <code>container</code>, <code>row</code> y <code>col</code>.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Clase</th>
+              <th>Función</th>
+              <th>Ejemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>container</code></td>
+              <td>Envuelve y centra el contenido.</td>
+              <td>Área principal del diseño.</td>
+            </tr>
+            <tr>
+              <td><code>row</code></td>
+              <td>Crea una fila para colocar columnas.</td>
+              <td>Fila que agrupa varias secciones.</td>
+            </tr>
+            <tr>
+              <td><code>col</code></td>
+              <td>Define una columna flexible.</td>
+              <td>Bloque dentro de la fila.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Ejemplo básico de grid</h3>
+
+      <div class="mono-block">
+        &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+        &lt;div class="col"&gt;Columna 1&lt;/div&gt;
+        &lt;div class="col"&gt;Columna 2&lt;/div&gt;
+        &lt;div class="col"&gt;Columna 3&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+      </div>
+
+      <p>
+        En este caso, las tres columnas comparten el espacio disponible en partes iguales.
+      </p>
+
+      <h3>Columnas según el tamaño de pantalla</h3>
+
+      <div class="mono-block">
+        &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+        &lt;div class="col-md-6"&gt;Bloque 1&lt;/div&gt;
+        &lt;div class="col-md-6"&gt;Bloque 2&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+      </div>
+
+      <div class="extra-info">
+        <strong>Interpretación:</strong> <code>col-md-6</code> significa que, en pantallas medianas o mayores,
+        el bloque ocupará 6 de las 12 columnas del sistema. Es decir, la mitad del ancho.
+      </div>
+    </section>
+
+    <section id="componentes">
+      <h2>5) Componentes comunes de Bootstrap</h2>
+
+      <p>
+        Bootstrap incluye componentes listos para usar que resuelven necesidades comunes del diseño web.
+      </p>
+
+      <div class="concept-grid">
+        <div class="card">
+          <div class="hoverline"></div>
+          <span class="pill">Botones</span>
+          <h3>Botones</h3>
+          <p>
+            Se crean con clases como <code>btn</code> y <code>btn-primary</code>.
+          </p>
+          <div class="mono-block">
+            &lt;button class="btn btn-primary"&gt;Guardar&lt;/button&gt;
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <span class="pill violet">Tarjetas</span>
+          <h3>Cards</h3>
+          <p>
+            Sirven para agrupar contenido en un bloque visual claro y ordenado.
+          </p>
+          <div class="mono-block">
+            &lt;div class="card"&gt;
+            &lt;div class="card-body"&gt;
+            Contenido
+            &lt;/div&gt;
+            &lt;/div&gt;
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <span class="pill orange">Formularios</span>
+          <h3>Formularios</h3>
+          <p>
+            Se estilizan con clases como <code>form-label</code> y <code>form-control</code>.
+          </p>
+          <div class="mono-block">
+            &lt;label class="form-label"&gt;Correo&lt;/label&gt;
+            &lt;input type="email" class="form-control"&gt;
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <span class="pill">Utilidades</span>
+          <h3>Utilidades</h3>
+          <p>
+            Son clases pequeñas para espaciado, color, alineación y más.
+          </p>
+          <div class="mono-block">
+            &lt;div class="p-3 mt-4 text-center"&gt;Contenido&lt;/div&gt;
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejemplos">
+      <h2>6) Ejemplos prácticos</h2>
+
+      <h3>Ejemplo 1: Botón principal</h3>
+
+      <div class="mono-block">
+        &lt;a href="#" class="btn btn-primary"&gt;Ver más&lt;/a&gt;
+      </div>
+
+      <p>
+        Aquí, <code>btn</code> activa el estilo base del botón y <code>btn-primary</code> aplica el estilo principal.
+      </p>
+
+      <h3>Ejemplo 2: Tarjeta simple</h3>
+
+      <div class="mono-block">
+        &lt;div class="card" style="width: 18rem;"&gt;
+        &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Curso de Bootstrap&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Aprende a crear interfaces rápidas y limpias.&lt;/p&gt;
+        &lt;a href="#" class="btn btn-primary"&gt;Entrar&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+      </div>
+
+      <p>
+        Este componente es útil para mostrar cursos, productos, noticias o recursos.
+      </p>
+
+      <h3>Ejemplo 3: Formulario básico</h3>
+
+      <div class="mono-block">
+        &lt;form&gt;
+        &lt;div class="mb-3"&gt;
+        &lt;label class="form-label"&gt;Nombre&lt;/label&gt;
+        &lt;input type="text" class="form-control"&gt;
+        &lt;/div&gt;
+
+        &lt;div class="mb-3"&gt;
+        &lt;label class="form-label"&gt;Correo&lt;/label&gt;
+        &lt;input type="email" class="form-control"&gt;
+        &lt;/div&gt;
+
+        &lt;button class="btn btn-success"&gt;Enviar&lt;/button&gt;
+        &lt;/form&gt;
+      </div>
+
+      <h3>Ejemplo 4: Estructura de una página</h3>
+
+      <div class="mono-block">
+        &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+        &lt;div class="col-md-8"&gt;Contenido principal&lt;/div&gt;
+        &lt;div class="col-md-4"&gt;Barra lateral&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+      </div>
+
+      <div class="callout">
+        Bootstrap es muy útil cuando se desea una interfaz ordenada rápidamente, especialmente en proyectos
+        académicos, prototipos o sitios informativos.
+      </div>
+    </section>
+
+    <section id="ventajas">
+      <h2>7) Ventajas y consideraciones</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Aspecto</th>
+              <th>Ventaja</th>
+              <th>Consideración</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rapidez</td>
+              <td>Permite diseñar más rápido.</td>
+              <td>Si no se personaliza, varias páginas pueden verse parecidas.</td>
+            </tr>
+            <tr>
+              <td>Consistencia</td>
+              <td>Los componentes mantienen uniformidad visual.</td>
+              <td>Conviene adaptar colores y detalles al proyecto.</td>
+            </tr>
+            <tr>
+              <td>Responsive</td>
+              <td>Facilita trabajar con distintos tamaños de pantalla.</td>
+              <td>Es necesario comprender bien el grid y los breakpoints.</td>
+            </tr>
+            <tr>
+              <td>Aprendizaje</td>
+              <td>Permite construir interfaces funcionales desde etapas tempranas.</td>
+              <td>No sustituye el aprendizaje de HTML y CSS puro.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="extra-info">
+        <strong>Conclusión práctica:</strong> Bootstrap ahorra tiempo, pero sigue siendo importante comprender la base
+        de HTML, CSS y diseño responsivo.
+      </div>
+    </section>
+
+    <section id="practica">
+      <h2>8) Práctica de repaso</h2>
+
+      <p>
+        Responde las preguntas y luego verifica tus respuestas.
+      </p>
+
+      <div class="quiz" id="quiz">
+        <div class="q">
+          <strong>1.</strong> ¿Qué es Bootstrap?
+          <label><input type="radio" name="q1" value="a"> Un lenguaje de programación</label>
+          <label><input type="radio" name="q1" value="b"> Un framework front-end</label>
+          <label><input type="radio" name="q1" value="c"> Un sistema operativo</label>
+        </div>
+
+        <div class="q">
+          <strong>2.</strong> ¿Qué clases forman la estructura básica del grid?
+          <label><input type="radio" name="q2" value="a"> <code>container</code>, <code>row</code>,
+            <code>col</code></label>
+          <label><input type="radio" name="q2" value="b"> <code>main</code>, <code>section</code>,
+            <code>article</code></label>
+          <label><input type="radio" name="q2" value="c"> <code>header</code>, <code>body</code>,
+            <code>footer</code></label>
+        </div>
+
+        <div class="q">
+          <strong>3.</strong> ¿Sobre qué tecnología se apoya el grid de Bootstrap 5?
+          <label><input type="radio" name="q3" value="a"> Float</label>
+          <label><input type="radio" name="q3" value="b"> Tables</label>
+          <label><input type="radio" name="q3" value="c"> Flexbox</label>
+        </div>
+
+        <div class="q">
+          <strong>4.</strong> ¿Qué clase suele usarse para un botón principal?
+          <label><input type="radio" name="q4" value="a"> <code>btn btn-primary</code></label>
+          <label><input type="radio" name="q4" value="b"> <code>button-main</code></label>
+          <label><input type="radio" name="q4" value="c"> <code>primary-button-large</code></label>
+        </div>
+
+        <div class="q">
+          <strong>5.</strong> ¿Qué ocurrió con jQuery en Bootstrap 5?
+          <label><input type="radio" name="q5" value="a"> Ahora es obligatorio</label>
+          <label><input type="radio" name="q5" value="b"> Ya no es dependencia obligatoria</label>
+          <label><input type="radio" name="q5" value="c"> Solo funciona con jQuery si se usa grid</label>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn" onclick="calificarQuiz()">Verificar respuestas</button>
+          <button class="btn ghost" onclick="reiniciarQuiz()">Reiniciar</button>
+        </div>
+
+        <div id="resultadoQuiz" class="result"></div>
+      </div>
+    </section>
+
+
+    <section id="cierre">
+      <h2>9) Cierre</h2>
+
+      <p>
+        Bootstrap es una herramienta muy útil para construir interfaces web de manera rápida y ordenada.
+        Su grid, sus componentes y sus utilidades permiten avanzar con más facilidad en el diseño.
+      </p>
+
+      <p>
+        Sin embargo, para usar Bootstrap correctamente, es importante seguir comprendiendo HTML, CSS y la lógica
+        del diseño responsivo. El framework ayuda mucho, pero no sustituye la base técnica del desarrollo web.
+      </p>
+
+      <div class="extra-info">
+        <strong>Para recordar:</strong> Bootstrap acelera el diseño, pero entender su estructura y sus clases
+        permite usarlo con criterio y no solo copiar código.
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    Clase 3 - Bootstrap | Material de apoyo para Diseño Web
+  </footer>
+
+  <script>
+    function calificarQuiz() {
+      let puntos = 0;
+
+      const respuestas = {
+        q1: "b",
+        q2: "a",
+        q3: "c",
+        q4: "a",
+        q5: "b"
+      };
+
+      for (const pregunta in respuestas) {
+        const seleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+
+        if (seleccionada && seleccionada.value === respuestas[pregunta]) {
+          puntos++;
+        }
+      }
+
+      const resultado = document.getElementById("resultadoQuiz");
+      resultado.className = "result";
+
+      if (puntos === 5) {
+        resultado.classList.add("ok");
+        resultado.textContent = `Excelente. Obtuviste ${puntos}/5. Comprendiste muy bien los fundamentos de Bootstrap.`;
+      } else if (puntos >= 3) {
+        resultado.classList.add("warn");
+        resultado.textContent = `Vas bien. Obtuviste ${puntos}/5. Conviene repasar grid, componentes y utilidades.`;
+      } else {
+        resultado.classList.add("bad");
+        resultado.textContent = `Obtuviste ${puntos}/5. Te recomiendo volver a leer la clase y practicar los ejemplos.`;
+      }
+    }
+
+    function reiniciarQuiz() {
+      document.querySelectorAll('#quiz input[type="radio"]').forEach(input => input.checked = false);
+
+      const resultado = document.getElementById("resultadoQuiz");
+      resultado.className = "result";
+      resultado.textContent = "";
+    }
+
+    function enviarRealimentacion() {
+      const nombre = document.getElementById("nombre").value.trim();
+      const comprension = document.getElementById("comprension").value;
+      const temaClaro = document.getElementById("temaClaro").value.trim();
+      const valoracion = document.getElementById("valoracion").value;
+      const resultado = document.getElementById("resultadoFormulario");
+
+      if (!nombre || !comprension || !temaClaro || !valoracion) {
+        resultado.className = "result bad";
+        resultado.textContent = "Por favor, completa los campos principales del formulario.";
+        return;
+      }
+
+      resultado.className = "result ok";
+      resultado.textContent =
+        `Gracias, ${nombre}. Tu realimentación fue registrada de forma demostrativa. Comprensión: ${comprension}. Tema claro: ${temaClaro}. Valoración: ${valoracion}/5.`;
+    }
+
+    function limpiarRealimentacion() {
+      document.getElementById("nombre").value = "";
+      document.getElementById("comprension").value = "";
+      document.getElementById("temaClaro").value = "";
+      document.getElementById("duda").value = "";
+      document.getElementById("valoracion").value = "";
+
+      const resultado = document.getElementById("resultadoFormulario");
+      resultado.className = "result";
+      resultado.textContent = "";
+    }
+  </script>
+
+</body>
+
+</html>
