@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diseño Web - Clase 4 - Bootstrap Práctico</title>
+
+  <link rel="icon" href="img/internet.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/clase.css">
+  
+  <!-- Bootstrap CDN CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    .color-box {
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 8px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .grid-example {
+      background-color: #f0f0f0;
+      padding: 15px;
+      margin: 5px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    .carousel-img {
+      max-height: 300px;
+      object-fit: cover;
+    }
+    
+    .card-example {
+      transition: transform 0.3s ease;
+    }
+    
+    .card-example:hover {
+      transform: translateY(-5px);
+    }
+    
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+  </style>
+</head>
+
+<body class="class-page">
+
+  <header>
+    <h1>Clase 4: Bootstrap Práctico</h1>
+    <p class="subtitle">Ejemplos concretos de componentes, grid, tarjetas, carruseles y botones</p>
+    <p class="subtitle"><em>"Bootstrap es la herramienta que convierte líneas de código en interfaces profesionales"</em></p>
+
+    <div class="anchorbar">
+      <a href="#instalacion">Instalación</a>
+      <a href="#grid">Grid</a>
+      <a href="#tarjetas">Tarjetas</a>
+      <a href="#carrusel">Carrusel</a>
+      <a href="#botones">Botones</a>
+      <a href="#colores">Colores</a>
+      <a href="#ejemplos">Ejemplos</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- SECCIÓN 1: INSTALACIÓN POR CDN -->
+    <section id="instalacion">
+      <h2>1) Instalación de Bootstrap por CDN</h2>
+
+      <p class="big">
+        La forma más rápida de usar Bootstrap es incluirlo mediante <strong>CDN</strong> 
+        (Content Delivery Network). No necesitas descargar nada ni instalar dependencias.
+      </p>
+
+      <h3>¿Cómo agregar Bootstrap a tu página?</h3>
+
+      <p>
+        Simplemente agrega estas dos líneas en el <code>&lt;head&gt;</code> de tu archivo HTML:
+      </p>
+
+      <div class="mono-block">
+        &lt;!-- Bootstrap CSS --&gt;<br>
+        &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+      </div>
+
+      <p>
+        Y antes de cerrar el <code>&lt;/body&gt;</code>, agrega el JavaScript de Bootstrap:
+      </p>
+
+      <div class="mono-block">
+        &lt;!-- Bootstrap JS --&gt;<br>
+        &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+      </div>
+
+      <div class="extra-info">
+        <strong>¿Por qué CDN?</strong> El CDN distribuye el archivo desde servidores alrededor del mundo, 
+        lo que hace que tu página cargue más rápido. Además, si otros sitios usan el mismo CDN, 
+        el navegador puede usar la versión en caché.
+      </div>
+
+      <h3>Estructura básica de una página con Bootstrap</h3>
+
+      <div class="mono-block">
+        &lt;!DOCTYPE html&gt;<br>
+        &lt;html lang="es"&gt;<br>
+        &lt;head&gt;<br>
+        &nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+        &nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+        &nbsp;&nbsp;&lt;title&gt;Mi página con Bootstrap&lt;/title&gt;<br>
+        &nbsp;&nbsp;&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;<br>
+        &lt;/head&gt;<br>
+        &lt;body&gt;<br>
+        &nbsp;&nbsp;&lt;div class="container"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;¡Hola Bootstrap!&lt;/h1&gt;<br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;<br>
+        &lt;/body&gt;<br>
+        &lt;/html&gt;
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: GRID -->
+    <section id="grid">
+      <h2>2) Sistema de Grid</h2>
+
+      <p class="big">
+        El <strong>grid de Bootstrap</strong> divide la pantalla en 12 columnas. 
+        Tú decides cuántas columnas ocupan tus elementos en diferentes tamaños de pantalla.
+      </p>
+
+      <p>
+        Esto permite crear diseños responsivos sin escribir mucho CSS. Bootstrap automáticamente 
+        ajusta los elementos al tamaño de la pantalla.
+      </p>
+
+      <h3>Ejemplo 1: Tres columnas iguales</h3>
+
+      <div class="mono-block">
+        &lt;div class="row"&gt;<br>
+        &nbsp;&nbsp;&lt;div class="col"&gt;Columna 1&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div class="col"&gt;Columna 2&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div class="col"&gt;Columna 3&lt;/div&gt;<br>
+        &lt;/div&gt;
+      </div>
+
+      <p><strong>Resultado visual:</strong></p>
+      <div class="row">
+        <div class="col">
+          <div class="grid-example">Columna 1</div>
+        </div>
+        <div class="col">
+          <div class="grid-example">Columna 2</div>
+        </div>
+        <div class="col">
+          <div class="grid-example">Columna 3</div>
+        </div>
+      </div>
+
+      <h3>Ejemplo 2: Columnas con tamaños específicos</h3>
+
+      <div class="mono-block">
+        &lt;div class="row"&gt;<br>
+        &nbsp;&nbsp;&lt;div class="col-6"&gt;6 columnas (mitad)&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div class="col-3"&gt;3 columnas (1/4)&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div class="col-3"&gt;3 columnas (1/4)&lt;/div&gt;<br>
+        &lt;/div&gt;
+      </div>
+
+      <p><strong>Resultado visual:</strong></p>
+      <div class="row">
+        <div class="col-6">
+          <div class="grid-example">6 columnas (mitad)</div>
+        </div>
+        <div class="col-3">
+          <div class="grid-example">3 columnas (1/4)</div>
+        </div>
+        <div class="col-3">
+          <div class="grid-example">3 columnas (1/4)</div>
+        </div>
+      </div>
+
+      <h3>Ejemplo 3: Responsive - diferentes tamaños en pantallas diferentes</h3>
+
+      <div class="mono-block">
+        &lt;div class="row"&gt;<br>
+        &nbsp;&nbsp;&lt;div class="col-12 col-md-6 col-lg-3"&gt;Contenido&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div class="col-12 col-md-6 col-lg-3"&gt;Contenido&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div class="col-12 col-md-6 col-lg-3"&gt;Contenido&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;div class="col-12 col-md-6 col-lg-3"&gt;Contenido&lt;/div&gt;<br>
+        &lt;/div&gt;
+      </div>
+
+      <p><strong>Resultado visual:</strong></p>
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="grid-example">Celular: 12<br>Tablet: 6<br>Desktop: 3</div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="grid-example">Celular: 12<br>Tablet: 6<br>Desktop: 3</div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="grid-example">Celular: 12<br>Tablet: 6<br>Desktop: 3</div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="grid-example">Celular: 12<br>Tablet: 6<br>Desktop: 3</div>
+        </div>
+      </div>
+
+      <div class="concept-grid">
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>col-12</h3>
+          <p>En móviles: ocupan todo el ancho (12 columnas)</p>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>col-md-6</h3>
+          <p>En tablets (md): ocupan media pantalla (6 columnas)</p>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>col-lg-3</h3>
+          <p>En desktops (lg): ocupan 1/4 de pantalla (3 columnas)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: TARJETAS -->
+    <section id="tarjetas">
+      <h2>3) Tarjetas (Cards)</h2>
+
+      <p class="big">
+        Las <strong>tarjetas</strong> son cajas con contenido que se usan para mostrar 
+        información de forma organizada. Pueden contener texto, imágenes, botones y más.
+      </p>
+
+      <h3>Ejemplo 1: Tarjeta simple con texto</h3>
+
+      <div class="mono-block">
+        &lt;div class="card card-example"&gt;<br>
+        &nbsp;&nbsp;&lt;div class="card-body"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h5 class="card-title"&gt;Título de la tarjeta&lt;/h5&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="card-text"&gt;Este es el contenido de texto de la tarjeta.&lt;/p&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#" class="btn btn-primary"&gt;Leer más&lt;/a&gt;<br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &lt;/div&gt;
+      </div>
+
+      <p><strong>Resultado visual:</strong></p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-example">
+            <div class="card-body">
+              <h5 class="card-title">Tarjeta con texto</h5>
+              <p class="card-text">Este es un ejemplo de tarjeta simple con texto descriptivo y un botón para más información.</p>
+              <a href="#" class="btn btn-primary">Leer más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Ejemplo 2: Tarjeta con imagen</h3>
+
+      <div class="mono-block">
+        &lt;div class="card card-example"&gt;<br>
+        &nbsp;&nbsp;&lt;img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Imagen"&gt;<br>
+        &nbsp;&nbsp;&lt;div class="card-body"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h5 class="card-title"&gt;Tarjeta con imagen&lt;/h5&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="card-text"&gt;La imagen aparece en la parte superior de la tarjeta.&lt;/p&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#" class="btn btn-success"&gt;Ver detalles&lt;/a&gt;<br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &lt;/div&gt;
+      </div>
+
+      <p><strong>Resultado visual:</strong></p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-example">
+            <img src="img/photo1.jpg" class="card-img-top carousel-img" alt="Imagen ejemplo">
+            <div class="card-body">
+              <h5 class="card-title">Tarjeta con imagen</h5>
+              <p class="card-text">La imagen aparece en la parte superior de la tarjeta y el contenido abajo.</p>
+              <a href="#" class="btn btn-success">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Ejemplo 3: Múltiples tarjetas en una fila</h3>
+
+      <div class="mono-block">
+        &lt;div class="row"&gt;<br>
+        &nbsp;&nbsp;&lt;div class="col-md-4"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="card"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="..." class="card-img-top" alt="..."&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="card-body"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h5 class="card-title"&gt;Tarjeta 1&lt;/h5&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="card-text"&gt;Contenido...&lt;/p&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &lt;/div&gt;
+      </div>
+
+      <p><strong>Resultado visual:</strong></p>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-example">
+            <img src="img/photo2.jpg" class="card-img-top carousel-img" alt="Producto 1">
+            <div class="card-body">
+              <h5 class="card-title">Producto 1</h5>
+              <p class="card-text">Descripción del producto uno</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-example">
+            <img src="img/photo3.avif" class="card-img-top carousel-img" alt="Producto 2">
+            <div class="card-body">
+              <h5 class="card-title">Producto 2</h5>
+              <p class="card-text">Descripción del producto dos</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-example">
+            <img src="img/photo2.jpg" class="card-img-top carousel-img" alt="Producto 3">
+            <div class="card-body">
+              <h5 class="card-title">Producto 3</h5>
+              <p class="card-text">Descripción del producto tres</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: CARRUSEL -->
+    <section id="carrusel">
+      <h2>4) Carrusel (Carousel)</h2>
+
+      <p class="big">
+        Un <strong>carrusel</strong> es un componente que muestra imágenes una después de otra, 
+        con botones para navegar. Es útil para galerías, promociones y destacados.
+      </p>
+
+      <h3>Ejemplo: Carrusel básico</h3>
+
+      <div class="mono-block">
+        &lt;div id="miCarrusel" class="carousel slide" data-bs-ride="carousel"&gt;<br>
+        &nbsp;&nbsp;&lt;div class="carousel-inner"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="carousel-item active"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="imagen1.jpg" class="d-block w-100" alt="..."&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="carousel-item"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="imagen2.jpg" class="d-block w-100" alt="..."&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="carousel-item"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="imagen3.jpg" class="d-block w-100" alt="..."&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;button class="carousel-control-prev" type="button" data-bs-target="#miCarrusel" data-bs-slide="prev"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;<br>
+        &nbsp;&nbsp;&lt;/button&gt;<br>
+        &nbsp;&nbsp;&lt;button class="carousel-control-next" type="button" data-bs-target="#miCarrusel" data-bs-slide="next"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;<br>
+        &nbsp;&nbsp;&lt;/button&gt;<br>
+        &lt;/div&gt;
+      </div>
+
+      <p><strong>Resultado visual:</strong></p>
+      <div id="demoCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/photo1.jpg" class="d-block w-100 carousel-img" alt="Imagen 1">
+          </div>
+          <div class="carousel-item">
+            <img src="img/photo2.jpg" class="d-block w-100 carousel-img" alt="Imagen 2">
+          </div>
+          <div class="carousel-item">
+            <img src="img/photo3.avif" class="d-block w-100 carousel-img" alt="Imagen 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#demoCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demoCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+
+      <div class="extra-info">
+        <strong>Notas importantes:</strong>
+        <ul>
+          <li><code>carousel-item active</code> indica cuál es la primera imagen a mostrar</li>
+          <li><code>data-bs-ride="carousel"</code> hace que el carrusel se mueva automáticamente</li>
+          <li>Los botones prev y next permiten navegar manualmente</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: BOTONES -->
+    <section id="botones">
+      <h2>5) Botones de Bootstrap</h2>
+
+      <p class="big">
+        Bootstrap ofrece botones con estilos predefinidos. Cada uno tiene un propósito visual específico 
+        que ayuda al usuario a entender qué hacer.
+      </p>
+
+      <h3>Estructura básica de un botón</h3>
+
+      <div class="mono-block">
+        &lt;button class="btn btn-primary"&gt;Botón&lt;/button&gt;<br>
+        &lt;a href="#" class="btn btn-secondary"&gt;Enlace como botón&lt;/a&gt;
+      </div>
+
+      <h3>Diferentes tipos de botones (por propósito)</h3>
+
+      <p><strong>Resultado visual:</strong></p>
+      <div class="row mb-4">
+        <div class="col-12">
+          <button class="btn btn-primary me-2 mb-2">btn-primary</button>
+          <button class="btn btn-secondary me-2 mb-2">btn-secondary</button>
+          <button class="btn btn-success me-2 mb-2">btn-success</button>
+          <button class="btn btn-danger me-2 mb-2">btn-danger</button>
+          <button class="btn btn-warning me-2 mb-2">btn-warning</button>
+          <button class="btn btn-info me-2 mb-2">btn-info</button>
+          <button class="btn btn-light me-2 mb-2">btn-light</button>
+          <button class="btn btn-dark me-2 mb-2">btn-dark</button>
+        </div>
+      </div>
+
+      <h3>Tamaños de botones</h3>
+
+      <div class="mono-block">
+        &lt;button class="btn btn-primary btn-lg"&gt;Botón grande&lt;/button&gt;<br>
+        &lt;button class="btn btn-primary"&gt;Botón normal&lt;/button&gt;<br>
+        &lt;button class="btn btn-primary btn-sm"&gt;Botón pequeño&lt;/button&gt;
+      </div>
+
+      <p><strong>Resultado visual:</strong></p>
+      <div class="row mb-4">
+        <div class="col-12">
+          <button class="btn btn-primary btn-lg me-2">Botón grande</button>
+          <button class="btn btn-primary me-2">Botón normal</button>
+          <button class="btn btn-primary btn-sm me-2">Botón pequeño</button>
+        </div>
+      </div>
+
+      <h3>Botones de contorno (outline)</h3>
+
+      <div class="mono-block">
+        &lt;button class="btn btn-outline-primary"&gt;Outline&lt;/button&gt;<br>
+        &lt;button class="btn btn-outline-danger"&gt;Outline&lt;/button&gt;<br>
+        &lt;button class="btn btn-outline-success"&gt;Outline&lt;/button&gt;
+      </div>
+
+      <p><strong>Resultado visual:</strong></p>
+      <div class="row mb-4">
+        <div class="col-12">
+          <button class="btn btn-outline-primary me-2 mb-2">btn-outline-primary</button>
+          <button class="btn btn-outline-secondary me-2 mb-2">btn-outline-secondary</button>
+          <button class="btn btn-outline-success me-2 mb-2">btn-outline-success</button>
+          <button class="btn btn-outline-danger me-2 mb-2">btn-outline-danger</button>
+          <button class="btn btn-outline-warning me-2 mb-2">btn-outline-warning</button>
+          <button class="btn btn-outline-info me-2 mb-2">btn-outline-info</button>
+        </div>
+      </div>
+
+      <div class="concept-grid">
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>btn-primary</h3>
+          <p>Botón principal para acciones principales (azul)</p>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>btn-danger</h3>
+          <p>Advertencia o acciones destructivas (rojo)</p>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>btn-success</h3>
+          <p>Confirmación o acciones positivas (verde)</p>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>btn-warning</h3>
+          <p>Alertas o precaución (amarillo)</p>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>btn-outline-*</h3>
+          <p>Botones con bordes, menos énfasis que los sólidos</p>
+        </div>
+
+        <div class="card">
+          <div class="hoverline"></div>
+          <h3>btn-lg / btn-sm</h3>
+          <p>Variaciones de tamaño para diferentes contextos</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6: COLORES EN BOOTSTRAP -->
+    <section id="colores">
+      <h2>6) Sistema de colores de Bootstrap</h2>
+
+      <p class="big">
+        Bootstrap define una paleta de colores estándar. Estos colores se usan en botones, 
+        alertas, fondos, textos y componentes. Conocerlos te ayuda a usar Bootstrap de forma consistente.
+      </p>
+
+      <h3>Colores principales y sus significados</h3>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <div class="color-box" style="background-color: #0d6efd;">
+            <strong>Primary - #0d6efd</strong><br>
+            Acciones principales
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="color-box" style="background-color: #6c757d;">
+            <strong>Secondary - #6c757d</strong><br>
+            Acciones secundarias
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="color-box" style="background-color: #198754;">
+            <strong>Success - #198754</strong><br>
+            Confirmación positiva
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="color-box" style="background-color: #dc3545;">
+            <strong>Danger - #dc3545</strong><br>
+            Errores o acciones destructivas
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="color-box" style="background-color: #ffc107;">
+            <strong>Warning - #ffc107</strong><br>
+            Advertencias
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="color-box" style="background-color: #0dcaf0;">
+            <strong>Info - #0dcaf0</strong><br>
+            Información importante
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="color-box" style="background-color: #f8f9fa;">
+            color: #333;
+            <strong>Light - #f8f9fa</strong><br>
+            Fondos claros
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="color-box" style="background-color: #212529;">
+            <strong>Dark - #212529</strong><br>
+            Textos oscuros
+          </div>
+        </div>
+      </div>
+
+      <h3>Cómo usar los colores en tu código</h3>
+
+      <div class="mono-block">
+        &lt;!-- Botones con colores --&gt;<br>
+        &lt;button class="btn btn-primary"&gt;Primario&lt;/button&gt;<br>
+        &lt;button class="btn btn-success"&gt;Éxito&lt;/button&gt;<br>
+        &lt;button class="btn btn-danger"&gt;Peligro&lt;/button&gt;<br>
+        <br>
+        &lt;!-- Alertas con colores --&gt;<br>
+        &lt;div class="alert alert-success"&gt;¡Operación exitosa!&lt;/div&gt;<br>
+        &lt;div class="alert alert-danger"&gt;Ha ocurrido un error&lt;/div&gt;<br>
+        <br>
+        &lt;!-- Texto con colores --&gt;<br>
+        &lt;p class="text-primary"&gt;Texto en color primario&lt;/p&gt;<br>
+        &lt;p class="text-danger"&gt;Texto en rojo&lt;/p&gt;<br>
+        <br>
+        &lt;!-- Fondos con colores --&gt;<br>
+        &lt;div class="bg-warning p-3"&gt;Fondo amarillo&lt;/div&gt;<br>
+        &lt;div class="bg-info p-3"&gt;Fondo azul claro&lt;/div&gt;
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7: EJEMPLOS PRÁCTICOS -->
+    <section id="ejemplos">
+      <h2>7) Ejemplos prácticos completos</h2>
+
+      <h3>Ejemplo 1: Página de producto</h3>
+
+      <div class="mono-block">
+        &lt;div class="container mt-5"&gt;<br>
+        &nbsp;&nbsp;&lt;div class="row"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col-md-6"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="producto.jpg" class="img-fluid" alt="Producto"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col-md-6"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Producto Premium&lt;/h1&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="text-muted"&gt;Descripción del producto...&lt;/p&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3 class="text-success"&gt;$99.99&lt;/h3&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="btn btn-primary btn-lg"&gt;Comprar ahora&lt;/button&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &lt;/div&gt;
+      </div>
+
+      <h3>Ejemplo 2: Galería de tarjetas</h3>
+
+      <div class="mono-block">
+        &lt;div class="container mt-5"&gt;<br>
+        &nbsp;&nbsp;&lt;h2 class="mb-4"&gt;Nuestros servicios&lt;/h2&gt;<br>
+        &nbsp;&nbsp;&lt;div class="row"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="col-md-4"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="card"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="card-body"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h5 class="card-title"&gt;Servicio 1&lt;/h5&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="card-text"&gt;Descripción...&lt;/p&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &lt;/div&gt;
+      </div>
+
+      <h3>Ejemplo 3: Sistema de alertas</h3>
+
+      <div class="mono-block">
+        &lt;div class="alert alert-success" role="alert"&gt;<br>
+        &nbsp;&nbsp;¡Éxito! Tu cuenta ha sido creada correctamente.<br>
+        &lt;/div&gt;<br>
+        <br>
+        &lt;div class="alert alert-warning" role="alert"&gt;<br>
+        &nbsp;&nbsp;⚠️ Advencia: Tu sesión expirará en 5 minutos.<br>
+        &lt;/div&gt;<br>
+        <br>
+        &lt;div class="alert alert-danger" role="alert"&gt;<br>
+        &nbsp;&nbsp;❌ Error: No se pudo procesar tu solicitud. Intenta nuevamente.<br>
+        &lt;/div&gt;
+      </div>
+
+      <p><strong>Resultado visual:</strong></p>
+      <div class="alert alert-success">✓ ¡Éxito! Tu cuenta ha sido creada correctamente.</div>
+      <div class="alert alert-warning">⚠️ Advertencia: Tu sesión expirará en 5 minutos.</div>
+      <div class="alert alert-danger">❌ Error: No se pudo procesar tu solicitud. Intenta nuevamente.</div>
+
+      <div class="extra-info">
+        <strong>Resumen de lo aprendido:</strong>
+        <ul>
+          <li>✓ Bootstrap se instala fácilmente por CDN</li>
+          <li>✓ El grid (12 columnas) permite crear layouts responsivos</li>
+          <li>✓ Las tarjetas organizan contenido de forma modular</li>
+          <li>✓ El carrusel muestra imágenes de forma automática</li>
+          <li>✓ Los botones tienen estilos y colores predefinidos</li>
+          <li>✓ El sistema de colores mantiene consistencia visual</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

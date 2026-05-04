@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Diseño Web - Clase 4 - Bootstrap: Ejemplos prácticos</title>
+<link href="img/internet.png" rel="icon" type="image/png"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/><link href="css/styles.css" rel="stylesheet"/>
+<link href="css/clase.css" rel="stylesheet"/>
+<style>
+    .bootstrap-preview { margin: 16px 0 24px; border: 1px solid rgba(15,23,42,0.12); border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 4px 14px rgba(0,0,0,0.04); }
+    .bootstrap-preview .preview-title { margin: 0; padding: 10px 14px; background: #f8fafc; border-bottom: 1px solid rgba(15,23,42,0.08); font-weight: 800; color: #1a5276; font-size: 0.95rem; }
+  
+    .bootstrap-preview .preview-content { padding: 18px; background: #fff; }
+    .bootstrap-preview .demo-box { border: 1px dashed #cbd5e1; border-radius: 12px; padding: 16px; background: #f8fafc; }
+    .bootstrap-preview .demo-slide { min-height: 220px; display:flex; align-items:center; justify-content:center; text-align:center; color:white; }
+    .bootstrap-preview .grid-demo .col > div,
+    .bootstrap-preview .grid-demo [class^="col-"] > div { background:#e8f4fd; border:1px solid #b6d7ef; border-radius:10px; padding:14px; text-align:center; font-weight:700; color:#1a5276; }
+    .bootstrap-preview .card { overflow: hidden; background-color: #fff; }
+    .bootstrap-preview .card:hover { transform: none; box-shadow: none; }
+    .bootstrap-preview .btn { border-radius: .375rem; }
+</style>
+</head>
+<body class="class-page">
+<header>
+<h1>Clase 4: Bootstrap — Ejemplos prácticos</h1>
+<p class="subtitle">Uso de CDN, tarjetas, carrusel, botones y sistema de grid para construir interfaces responsivas</p>
+<div class="anchorbar">
+<a href="#introduccion">Introducción</a>
+<a href="#cdn">CDN</a>
+<a href="#tarjetas">Tarjetas</a>
+<a href="#carrusel">Carrusel</a>
+<a href="#botones">Botones</a>
+<a href="#grid">Grid</a>
+<a href="#practica-guiada">Práctica guiada</a>
+<a href="#quiz">Repaso</a>
+</div>
+</header>
+<div class="container">
+<section id="introduccion">
+<h2>1) Introducción</h2>
+<p class="big">
+        En la clase anterior se estudió qué es <strong>Bootstrap</strong> y por qué ayuda a construir interfaces web
+        de forma rápida. En esta clase se trabajará de manera más práctica: se verá cómo incluir Bootstrap en una página
+        y cómo usar algunos de sus componentes más comunes.
+      </p>
+<p>
+        El objetivo no es memorizar todas las clases, sino comprender la lógica: Bootstrap funciona agregando clases
+        directamente a las etiquetas HTML. Esas clases ya tienen estilos preparados para colores, espaciados, columnas,
+        tarjetas, botones, carruseles y muchos otros elementos.
+      </p>
+<div class="concept-grid">
+<div class="card">
+<div class="hoverline"></div>
+<h3>CDN</h3>
+<p>
+            Permite usar Bootstrap sin descargarlo. Solo se agregan enlaces al CSS y al JavaScript desde internet.
+          </p>
+</div>
+<div class="card">
+<div class="hoverline"></div>
+<h3>Componentes</h3>
+<p>
+            Son bloques ya diseñados, como tarjetas, botones, carruseles, alertas, menús y formularios.
+          </p>
+</div>
+<div class="card">
+<div class="hoverline"></div>
+<h3>Grid</h3>
+<p>
+            Permite ordenar el contenido en filas y columnas para que la página se adapte a diferentes pantallas.
+          </p>
+</div>
+</div>
+<div class="extra-info">
+<strong>Idea clave:</strong> Bootstrap se usa escribiendo HTML normal, pero agregando clases predefinidas.
+        Por ejemplo: <code>btn btn-primary</code>, <code>card</code>, <code>container</code>, <code>row</code> y
+        <code>col-md-6</code>.
+      </div>
+</section>
+<section id="cdn">
+<h2>2) Cómo incluir Bootstrap por CDN</h2>
+<p>
+        La forma más rápida de iniciar con Bootstrap es usar un <strong>CDN</strong>. Un CDN es un servicio que entrega
+        archivos desde internet, por lo que no se necesita descargar Bootstrap manualmente al proyecto.
+      </p>
+<h3>Plantilla mínima con Bootstrap</h3>
+<div class="mono-block">
+&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Mi página con Bootstrap&lt;/title&gt;
+
+  &lt;!-- CSS de Bootstrap --&gt;
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;div class="container mt-5"&gt;
+    &lt;h1 class="text-primary"&gt;Hola Bootstrap&lt;/h1&gt;
+    &lt;p class="lead"&gt;Esta página ya puede usar las clases de Bootstrap.&lt;/p&gt;
+    &lt;button class="btn btn-success"&gt;Comenzar&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;!-- JavaScript de Bootstrap. Debe ir antes de cerrar body. --&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+          crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </div>
+<div class="bootstrap-preview">
+<p class="preview-title">Ejemplo real renderizado con Bootstrap por CDN</p>
+<div class="preview-content">
+<div class="container mt-4">
+<div class="demo-box">
+<h1 class="text-primary">Hola Bootstrap</h1>
+<p class="lead mb-3" style="color:black">Esta página ya puede usar clases como <code>container</code>, <code>text-primary</code>, <code>lead</code> y <code>btn</code>.</p>
+<button class="btn btn-success">Comenzar</button>
+<button class="btn btn-outline-primary ms-2">Más información</button>
+</div>
+</div>
+</div>
+</div>
+<div class="stepbox">
+<strong>Paso a paso:</strong>
+<ol>
+<li>Crear un archivo llamado <code>index.html</code>.</li>
+<li>Agregar la etiqueta <code>meta viewport</code> para que la página sea responsiva.</li>
+<li>Colocar el enlace CSS de Bootstrap dentro de <code>&lt;head&gt;</code>.</li>
+<li>Escribir el contenido HTML dentro de <code>&lt;body&gt;</code>.</li>
+<li>Colocar el script de Bootstrap antes de <code>&lt;/body&gt;</code>.</li>
+</ol>
+</div>
+<div class="callout">
+        El archivo CSS permite usar estilos visuales. El archivo JavaScript permite que funcionen componentes
+        interactivos como carruseles, dropdowns, modales y menús colapsables.
+      </div>
+</section>
+<section id="tarjetas">
+<h2>3) Tarjetas en Bootstrap</h2>
+<p>
+        Las tarjetas o <strong>cards</strong> sirven para presentar contenido dentro de un bloque visual ordenado.
+        Se usan mucho para mostrar cursos, productos, noticias, servicios, perfiles o recursos.
+      </p>
+<h3>3.1 Tarjeta solo con texto</h3>
+<div class="mono-block">
+&lt;div class="card" style="width: 18rem;"&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Curso de HTML y CSS&lt;/h5&gt;
+    &lt;h6 class="card-subtitle mb-2 text-body-secondary"&gt;Nivel básico&lt;/h6&gt;
+    &lt;p class="card-text"&gt;
+      Aprende a estructurar páginas web usando etiquetas semánticas y estilos CSS.
+    &lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Ver curso&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      </div>
+<p>
+        En este ejemplo, <code>card</code> crea el contenedor general, <code>card-body</code> agrupa el contenido,
+        <code>card-title</code> define el título y <code>card-text</code> da formato al párrafo principal.
+      </p>
+<div class="bootstrap-preview">
+<p class="preview-title">Ejemplo real: tarjeta de Bootstrap solo con texto</p>
+<div class="preview-content">
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+<h5 class="card-title">Curso de HTML y CSS</h5>
+<h6 class="card-subtitle mb-2 text-body-secondary">Nivel básico</h6>
+<p class="card-text">Aprende a estructurar páginas web usando etiquetas semánticas y estilos CSS.</p>
+<a class="btn btn-primary" href="javascript:void(0)">Ver curso</a>
+</div>
+</div>
+</div>
+</div>
+<h3>3.2 Tarjeta con imagen</h3>
+<div class="mono-block">
+&lt;div class="card" style="width: 18rem;"&gt;
+  &lt;img src="img/diseno-web.jpg" class="card-img-top" alt="Diseño web en una computadora"&gt;
+
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Diseño Web&lt;/h5&gt;
+    &lt;p class="card-text"&gt;
+      Construye interfaces modernas utilizando HTML, CSS, Bootstrap y buenas prácticas visuales.
+    &lt;/p&gt;
+    &lt;a href="#" class="btn btn-success"&gt;Inscribirme&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      </div>
+<div class="extra-info">
+<strong>Importante:</strong> la clase <code>card-img-top</code> coloca la imagen en la parte superior
+        de la tarjeta. El atributo <code>alt</code> describe la imagen y mejora la accesibilidad.
+      </div>
+<div class="bootstrap-preview">
+<p class="preview-title">Ejemplo real: tarjeta de Bootstrap con imagen</p>
+<div class="preview-content">
+<div class="card" style="width: 18rem;">
+<svg aria-label="Imagen demostrativa de diseño web" class="card-img-top" height="150" role="img" width="100%" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#1a5276" height="100%" width="100%"></rect>
+<circle cx="70" cy="60" fill="#e67e22" r="28"></circle>
+<rect fill="#ffffff" height="18" opacity="0.95" rx="5" width="120" x="120" y="45"></rect>
+<rect fill="#ffffff" height="12" opacity="0.75" rx="4" width="90" x="120" y="75"></rect>
+<text fill="white" font-family="Arial" font-size="18" font-weight="700" text-anchor="middle" x="50%" y="126">Diseño Web</text>
+</svg>
+<div class="card-body">
+<h5 class="card-title">Diseño Web</h5>
+<p class="card-text">Construye interfaces modernas utilizando HTML, CSS, Bootstrap y buenas prácticas visuales.</p>
+<a class="btn btn-success" href="javascript:void(0)">Inscribirme</a>
+</div>
+</div>
+</div>
+</div>
+<h3>3.3 Varias tarjetas usando grid</h3>
+<div class="mono-block">
+&lt;div class="container"&gt;
+  &lt;div class="row g-4"&gt;
+
+    &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+      &lt;div class="card h-100"&gt;
+        &lt;div class="card-body"&gt;
+          &lt;h5 class="card-title"&gt;HTML&lt;/h5&gt;
+          &lt;p class="card-text"&gt;Estructura el contenido de una página.&lt;/p&gt;
+          &lt;a href="#" class="btn btn-primary"&gt;Ver más&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+      &lt;div class="card h-100"&gt;
+        &lt;div class="card-body"&gt;
+          &lt;h5 class="card-title"&gt;CSS&lt;/h5&gt;
+          &lt;p class="card-text"&gt;Da estilo, color y distribución visual.&lt;/p&gt;
+          &lt;a href="#" class="btn btn-success"&gt;Ver más&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+      &lt;div class="card h-100"&gt;
+        &lt;div class="card-body"&gt;
+          &lt;h5 class="card-title"&gt;Bootstrap&lt;/h5&gt;
+          &lt;p class="card-text"&gt;Acelera la creación de interfaces responsivas.&lt;/p&gt;
+          &lt;a href="#" class="btn btn-warning"&gt;Ver más&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+      </div>
+<p>
+        La clase <code>g-4</code> agrega separación entre columnas y filas. La clase <code>h-100</code>
+        ayuda a que las tarjetas tengan una altura uniforme dentro de su columna.
+      </p>
+<div class="bootstrap-preview">
+<p class="preview-title">Ejemplo real: tarjetas organizadas con el grid de Bootstrap</p>
+<div class="preview-content">
+<div class="container">
+<div class="row g-4">
+<div class="col-12 col-md-6 col-lg-4">
+<div class="card h-100"><div class="card-body"><h5 class="card-title">HTML</h5><p class="card-text">Estructura el contenido de una página.</p><a class="btn btn-primary" href="javascript:void(0)">Ver más</a></div></div>
+</div>
+<div class="col-12 col-md-6 col-lg-4">
+<div class="card h-100"><div class="card-body"><h5 class="card-title">CSS</h5><p class="card-text">Da estilo, color y distribución visual.</p><a class="btn btn-success" href="javascript:void(0)">Ver más</a></div></div>
+</div>
+<div class="col-12 col-md-6 col-lg-4">
+<div class="card h-100"><div class="card-body"><h5 class="card-title">Bootstrap</h5><p class="card-text">Acelera la creación de interfaces responsivas.</p><a class="btn btn-warning" href="javascript:void(0)">Ver más</a></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="carrusel">
+<h2>4) Cómo agregar un carrusel</h2>
+<p>
+        El carrusel permite mostrar varias imágenes o bloques de contenido en un mismo espacio. Es útil para banners,
+        galerías, promociones, portadas o secciones destacadas.
+      </p>
+<h3>Ejemplo de carrusel con imágenes</h3>
+<div class="mono-block">
+&lt;div id="carouselEjemplo" class="carousel slide" data-bs-ride="carousel"&gt;
+
+  &lt;div class="carousel-indicators"&gt;
+    &lt;button type="button" data-bs-target="#carouselEjemplo" data-bs-slide-to="0"
+            class="active" aria-current="true" aria-label="Diapositiva 1"&gt;&lt;/button&gt;
+    &lt;button type="button" data-bs-target="#carouselEjemplo" data-bs-slide-to="1"
+            aria-label="Diapositiva 2"&gt;&lt;/button&gt;
+    &lt;button type="button" data-bs-target="#carouselEjemplo" data-bs-slide-to="2"
+            aria-label="Diapositiva 3"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;
+      &lt;img src="img/banner-1.jpg" class="d-block w-100" alt="Primer banner"&gt;
+      &lt;div class="carousel-caption d-none d-md-block"&gt;
+        &lt;h5&gt;Primer contenido&lt;/h5&gt;
+        &lt;p&gt;Descripción breve del primer elemento.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="img/banner-2.jpg" class="d-block w-100" alt="Segundo banner"&gt;
+      &lt;div class="carousel-caption d-none d-md-block"&gt;
+        &lt;h5&gt;Segundo contenido&lt;/h5&gt;
+        &lt;p&gt;Descripción breve del segundo elemento.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="img/banner-3.jpg" class="d-block w-100" alt="Tercer banner"&gt;
+      &lt;div class="carousel-caption d-none d-md-block"&gt;
+        &lt;h5&gt;Tercer contenido&lt;/h5&gt;
+        &lt;p&gt;Descripción breve del tercer elemento.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;button class="carousel-control-prev" type="button"
+          data-bs-target="#carouselEjemplo" data-bs-slide="prev"&gt;
+    &lt;span class="carousel-control-prev-icon" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span class="visually-hidden"&gt;Anterior&lt;/span&gt;
+  &lt;/button&gt;
+
+  &lt;button class="carousel-control-next" type="button"
+          data-bs-target="#carouselEjemplo" data-bs-slide="next"&gt;
+    &lt;span class="carousel-control-next-icon" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span class="visually-hidden"&gt;Siguiente&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+      </div>
+<div class="bootstrap-preview">
+<p class="preview-title">Ejemplo real: carrusel interactivo de Bootstrap</p>
+<div class="preview-content">
+<div class="carousel slide" data-bs-ride="carousel" id="carouselEjemploReal">
+<div class="carousel-indicators">
+<button aria-current="true" aria-label="Diapositiva 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselEjemploReal" type="button"></button>
+<button aria-label="Diapositiva 2" data-bs-slide-to="1" data-bs-target="#carouselEjemploReal" type="button"></button>
+<button aria-label="Diapositiva 3" data-bs-slide-to="2" data-bs-target="#carouselEjemploReal" type="button"></button>
+</div>
+<div class="carousel-inner rounded-3 overflow-hidden">
+<div class="carousel-item active"><div class="demo-slide bg-primary"><div><h5>HTML Semántico</h5><p>Organiza el contenido con sentido.</p></div></div></div>
+<div class="carousel-item"><div class="demo-slide bg-success"><div><h5>CSS y Flexbox</h5><p>Diseña estructuras visuales adaptables.</p></div></div></div>
+<div class="carousel-item"><div class="demo-slide bg-warning text-dark"><div><h5>Bootstrap</h5><p>Usa componentes listos para construir más rápido.</p></div></div></div>
+</div>
+<button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselEjemploReal" type="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span><span class="visually-hidden">Anterior</span></button>
+<button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselEjemploReal" type="button"><span aria-hidden="true" class="carousel-control-next-icon"></span><span class="visually-hidden">Siguiente</span></button>
+</div>
+</div>
+</div>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Clase o atributo</th>
+<th>Función</th>
+<th>Observación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>carousel slide</code></td>
+<td>Activa la estructura del carrusel.</td>
+<td>Se coloca en el contenedor principal.</td>
+</tr>
+<tr>
+<td><code>carousel-inner</code></td>
+<td>Agrupa las diapositivas.</td>
+<td>Debe contener los elementos <code>carousel-item</code>.</td>
+</tr>
+<tr>
+<td><code>carousel-item active</code></td>
+<td>Define la primera diapositiva visible.</td>
+<td>Solo una diapositiva debe iniciar como <code>active</code>.</td>
+</tr>
+<tr>
+<td><code>data-bs-target</code></td>
+<td>Conecta botones e indicadores con el carrusel.</td>
+<td>Debe apuntar al mismo <code>id</code> del carrusel.</td>
+</tr>
+<tr>
+<td><code>data-bs-slide</code></td>
+<td>Indica si el botón avanza o retrocede.</td>
+<td>Usa valores como <code>prev</code> o <code>next</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="extra-info blue">
+<strong>Para que funcione:</strong> el carrusel necesita el JavaScript de Bootstrap.
+        Si solo se enlaza el CSS, el diseño se verá, pero los controles no funcionarán.
+      </div>
+</section>
+<section id="botones">
+<h2>5) Botones de diferentes colores</h2>
+<p>
+        Bootstrap ofrece botones con colores semánticos. Esto significa que el color comunica una intención:
+        acción principal, éxito, advertencia, peligro, información, etc.
+      </p>
+<h3>Ejemplo de botones</h3>
+<div class="mono-block">
+&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="btn btn-warning"&gt;Warning&lt;/button&gt;
+&lt;button class="btn btn-info"&gt;Info&lt;/button&gt;
+&lt;button class="btn btn-light"&gt;Light&lt;/button&gt;
+&lt;button class="btn btn-dark"&gt;Dark&lt;/button&gt;
+      </div>
+<div class="bootstrap-preview">
+<p class="preview-title">Ejemplo real: colores de botones en Bootstrap</p>
+<div class="preview-content">
+<div class="d-flex flex-wrap gap-2 align-items-center">
+<button class="btn btn-primary">Primary</button>
+<button class="btn btn-secondary">Secondary</button>
+<button class="btn btn-success">Success</button>
+<button class="btn btn-danger">Danger</button>
+<button class="btn btn-warning">Warning</button>
+<button class="btn btn-info">Info</button>
+<button class="btn btn-light border">Light</button>
+<button class="btn btn-dark">Dark</button>
+</div>
+<hr/>
+<div class="d-flex flex-wrap gap-2 align-items-center">
+<button class="btn btn-outline-primary">Outline primary</button>
+<button class="btn btn-outline-success">Outline success</button>
+<button class="btn btn-outline-danger">Outline danger</button>
+<button class="btn btn-outline-warning">Outline warning</button>
+</div>
+</div>
+</div>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Clase</th>
+<th>Color / intención</th>
+<th>Ejemplo de uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>btn-primary</code></td>
+<td>Azul / acción principal</td>
+<td>Guardar, continuar, enviar formulario.</td>
+</tr>
+<tr>
+<td><code>btn-secondary</code></td>
+<td>Gris / acción secundaria</td>
+<td>Cancelar, volver, opción menos importante.</td>
+</tr>
+<tr>
+<td><code>btn-success</code></td>
+<td>Verde / resultado positivo</td>
+<td>Confirmar, aceptar, completar.</td>
+</tr>
+<tr>
+<td><code>btn-danger</code></td>
+<td>Rojo / acción destructiva o crítica</td>
+<td>Eliminar, rechazar, advertir riesgo.</td>
+</tr>
+<tr>
+<td><code>btn-warning</code></td>
+<td>Amarillo / advertencia</td>
+<td>Revisar, atención, acción con cuidado.</td>
+</tr>
+<tr>
+<td><code>btn-info</code></td>
+<td>Celeste / información</td>
+<td>Ver detalles, aprender más, ayuda.</td>
+</tr>
+<tr>
+<td><code>btn-light</code></td>
+<td>Claro / bajo contraste</td>
+<td>Acción suave sobre fondos oscuros.</td>
+</tr>
+<tr>
+<td><code>btn-dark</code></td>
+<td>Oscuro / énfasis fuerte</td>
+<td>Acción destacada en diseños claros.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Botones con borde</h3>
+<div class="mono-block">
+&lt;button class="btn btn-outline-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-outline-success"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-outline-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="btn btn-outline-warning"&gt;Warning&lt;/button&gt;
+      </div>
+<p>
+        Las clases <code>btn-outline-*</code> crean botones con borde y fondo transparente. Son útiles cuando se desea
+        una interfaz menos cargada visualmente.
+      </p>
+</section>
+<section id="grid">
+<h2>6) Ejemplos del grid de Bootstrap</h2>
+<p class="big">
+        El grid de Bootstrap usa un sistema de <strong>12 columnas</strong>. Con este sistema se puede decidir cuánto
+        espacio ocupa cada elemento según el tamaño de pantalla.
+      </p>
+<h3>6.1 Tres columnas iguales</h3>
+<div class="mono-block">
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col"&gt;Columna 1&lt;/div&gt;
+    &lt;div class="col"&gt;Columna 2&lt;/div&gt;
+    &lt;div class="col"&gt;Columna 3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      </div>
+<p>
+        Cuando se usa solamente <code>col</code>, Bootstrap reparte el espacio disponible de forma automática.
+      </p>
+<h3>6.2 Dos columnas de 6 espacios cada una</h3>
+<div class="mono-block">
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-md-6"&gt;Contenido izquierdo&lt;/div&gt;
+    &lt;div class="col-md-6"&gt;Contenido derecho&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      </div>
+<div class="extra-info">
+<strong>Interpretación:</strong> <code>col-md-6</code> significa que, desde pantallas medianas en adelante,
+        cada bloque ocupa 6 de las 12 columnas. En pantallas pequeñas, los bloques se apilan uno debajo del otro.
+      </div>
+<h3>6.3 Layout con contenido principal y barra lateral</h3>
+<div class="mono-block">
+&lt;div class="container"&gt;
+  &lt;div class="row g-4"&gt;
+    &lt;main class="col-12 col-lg-8"&gt;
+      &lt;h2&gt;Contenido principal&lt;/h2&gt;
+      &lt;p&gt;Aquí se puede colocar el texto principal, artículos o productos destacados.&lt;/p&gt;
+    &lt;/main&gt;
+
+    &lt;aside class="col-12 col-lg-4"&gt;
+      &lt;h3&gt;Barra lateral&lt;/h3&gt;
+      &lt;p&gt;Aquí pueden ir enlaces, noticias, filtros o información adicional.&lt;/p&gt;
+    &lt;/aside&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      </div>
+<p>
+        Este patrón es común en blogs, sitios de noticias, páginas de cursos y tiendas en línea.
+      </p>
+<h3>6.4 Columnas responsivas para tarjetas</h3>
+<div class="mono-block">
+&lt;div class="container"&gt;
+  &lt;div class="row g-3"&gt;
+    &lt;div class="col-12 col-sm-6 col-lg-3"&gt;Tarjeta 1&lt;/div&gt;
+    &lt;div class="col-12 col-sm-6 col-lg-3"&gt;Tarjeta 2&lt;/div&gt;
+    &lt;div class="col-12 col-sm-6 col-lg-3"&gt;Tarjeta 3&lt;/div&gt;
+    &lt;div class="col-12 col-sm-6 col-lg-3"&gt;Tarjeta 4&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      </div>
+<div class="bootstrap-preview">
+<p class="preview-title">Ejemplo real: grid de Bootstrap en columnas responsivas</p>
+<div class="preview-content">
+<div class="container grid-demo">
+<h6 class="text-body-secondary mb-2">Tres columnas iguales</h6>
+<div class="row g-3 mb-4">
+<div class="col"><div>Columna 1</div></div>
+<div class="col"><div>Columna 2</div></div>
+<div class="col"><div>Columna 3</div></div>
+</div>
+<h6 class="text-body-secondary mb-2">Contenido principal + barra lateral</h6>
+<div class="row g-3">
+<main class="col-12 col-lg-8"><div>Contenido principal<br/><small>col-12 col-lg-8</small></div></main>
+<aside class="col-12 col-lg-4"><div>Barra lateral<br/><small>col-12 col-lg-4</small></div></aside>
+</div>
+</div>
+</div>
+</div>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Clase</th>
+<th>Comportamiento</th>
+<th>Resultado aproximado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>col-12</code></td>
+<td>Desde pantallas muy pequeñas.</td>
+<td>Una tarjeta por fila.</td>
+</tr>
+<tr>
+<td><code>col-sm-6</code></td>
+<td>Desde pantallas pequeñas.</td>
+<td>Dos tarjetas por fila.</td>
+</tr>
+<tr>
+<td><code>col-lg-3</code></td>
+<td>Desde pantallas grandes.</td>
+<td>Cuatro tarjetas por fila.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="practica-guiada">
+<h2>7) Práctica guiada: página de cursos</h2>
+<p>
+        Ahora se integran varios elementos en un solo ejemplo: CDN, grid, tarjetas, botones y carrusel.
+        La idea es construir una página sencilla para presentar cursos o servicios.
+      </p>
+<div class="mono-block">
+&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Cursos de Tecnología&lt;/title&gt;
+
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;header class="bg-primary text-white text-center py-5"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1&gt;Cursos de Tecnología&lt;/h1&gt;
+      &lt;p class="lead"&gt;Aprende desarrollo web con clases prácticas.&lt;/p&gt;
+      &lt;a href="#cursos" class="btn btn-light"&gt;Ver cursos&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;section class="container my-5"&gt;
+    &lt;div id="carouselCursos" class="carousel slide" data-bs-ride="carousel"&gt;
+      &lt;div class="carousel-inner"&gt;
+        &lt;div class="carousel-item active"&gt;
+          &lt;img src="img/banner-html.jpg" class="d-block w-100" alt="Curso HTML"&gt;
+        &lt;/div&gt;
+        &lt;div class="carousel-item"&gt;
+          &lt;img src="img/banner-css.jpg" class="d-block w-100" alt="Curso CSS"&gt;
+        &lt;/div&gt;
+        &lt;div class="carousel-item"&gt;
+          &lt;img src="img/banner-bootstrap.jpg" class="d-block w-100" alt="Curso Bootstrap"&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;button class="carousel-control-prev" type="button"
+              data-bs-target="#carouselCursos" data-bs-slide="prev"&gt;
+        &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+
+      &lt;button class="carousel-control-next" type="button"
+              data-bs-target="#carouselCursos" data-bs-slide="next"&gt;
+        &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;main id="cursos" class="container my-5"&gt;
+    &lt;div class="row g-4"&gt;
+
+      &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+        &lt;div class="card h-100"&gt;
+          &lt;div class="card-body"&gt;
+            &lt;h5 class="card-title"&gt;HTML Semántico&lt;/h5&gt;
+            &lt;p class="card-text"&gt;Aprende a organizar el contenido de una página web.&lt;/p&gt;
+            &lt;a href="#" class="btn btn-primary"&gt;Ver detalles&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+        &lt;div class="card h-100"&gt;
+          &lt;img src="img/css.jpg" class="card-img-top" alt="CSS"&gt;
+          &lt;div class="card-body"&gt;
+            &lt;h5 class="card-title"&gt;CSS y Flexbox&lt;/h5&gt;
+            &lt;p class="card-text"&gt;Diseña interfaces atractivas y adaptables.&lt;/p&gt;
+            &lt;a href="#" class="btn btn-success"&gt;Inscribirme&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+        &lt;div class="card h-100"&gt;
+          &lt;img src="img/bootstrap.jpg" class="card-img-top" alt="Bootstrap"&gt;
+          &lt;div class="card-body"&gt;
+            &lt;h5 class="card-title"&gt;Bootstrap&lt;/h5&gt;
+            &lt;p class="card-text"&gt;Construye sitios responsivos con componentes listos.&lt;/p&gt;
+            &lt;a href="#" class="btn btn-warning"&gt;Comenzar&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/main&gt;
+
+  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+          crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </div>
+<div class="bootstrap-preview">
+<p class="preview-title">Ejemplo real</p>
+<div class="preview-content">
+<header class="bg-primary text-white text-center py-4 rounded-3 mb-4">
+<div class="container"><h1 class="h3">Cursos de Tecnología</h1><p class="lead mb-3">Aprende desarrollo web con clases prácticas.</p><a class="btn btn-light" href="javascript:void(0)">Ver cursos</a></div>
+</header>
+<main class="container" id="cursos">
+<div class="row g-4">
+<div class="col-12 col-md-4"><div class="card h-100"><div class="card-body"><h5 class="card-title">HTML Semántico</h5><p class="card-text">Organiza correctamente el contenido.</p><a class="btn btn-primary" href="javascript:void(0)">Ver detalles</a></div></div></div>
+<div class="col-12 col-md-4"><div class="card h-100"><div class="card-body"><h5 class="card-title">CSS y Flexbox</h5><p class="card-text">Diseña interfaces atractivas.</p><a class="btn btn-success" href="javascript:void(0)">Inscribirme</a></div></div></div>
+<div class="col-12 col-md-4"><div class="card h-100"><div class="card-body"><h5 class="card-title">Bootstrap</h5><p class="card-text">Construye sitios responsivos.</p><a class="btn btn-warning" href="javascript:void(0)">Comenzar</a></div></div></div>
+</div>
+</main>
+</div>
+</div>
+<div class="stepbox">
+<strong>Reto para estudiantes:</strong>
+<ol>
+<li>Cambiar los textos de las tarjetas por servicios de una empresa real o ficticia.</li>
+<li>Agregar tres imágenes propias dentro de la carpeta <code>img</code>.</li>
+<li>Modificar los colores de los botones según la intención de cada acción.</li>
+<li>Probar la página en vista móvil, tablet y escritorio.</li>
+<li>Agregar una cuarta tarjeta y ajustar el grid para que se vea ordenado.</li>
+</ol>
+</div>
+</section>
+<section id="quiz">
+<h2>8) Práctica de repaso</h2>
+<p>
+        Responde las preguntas y luego verifica tus respuestas.
+      </p>
+<div class="quiz" id="quizBox">
+<div class="q">
+<strong>1.</strong> ¿Dónde se coloca normalmente el enlace CSS de Bootstrap?
+          <label><input name="q1" type="radio" value="a"/> Dentro de <code>&lt;head&gt;</code></label>
+<label><input name="q1" type="radio" value="b"/> Después de <code>&lt;/html&gt;</code></label>
+<label><input name="q1" type="radio" value="c"/> Dentro de una imagen</label>
+</div>
+<div class="q">
+<strong>2.</strong> ¿Qué clase se usa para crear el contenedor principal de una tarjeta?
+          <label><input name="q2" type="radio" value="a"/> <code>box-card</code></label>
+<label><input name="q2" type="radio" value="b"/> <code>card</code></label>
+<label><input name="q2" type="radio" value="c"/> <code>section-card</code></label>
+</div>
+<div class="q">
+<strong>3.</strong> ¿Qué componente necesita JavaScript de Bootstrap para funcionar correctamente?
+          <label><input name="q3" type="radio" value="a"/> Carrusel</label>
+<label><input name="q3" type="radio" value="b"/> Un párrafo simple</label>
+<label><input name="q3" type="radio" value="c"/> Un título <code>h1</code></label>
+</div>
+<div class="q">
+<strong>4.</strong> ¿Qué clase representa una acción positiva o de confirmación?
+          <label><input name="q4" type="radio" value="a"/> <code>btn-success</code></label>
+<label><input name="q4" type="radio" value="b"/> <code>btn-danger</code></label>
+<label><input name="q4" type="radio" value="c"/> <code>btn-dark</code></label>
+</div>
+<div class="q">
+<strong>5.</strong> En el grid de Bootstrap, ¿cuántas columnas usa el sistema base?
+          <label><input name="q5" type="radio" value="a"/> 6 columnas</label>
+<label><input name="q5" type="radio" value="b"/> 10 columnas</label>
+<label><input name="q5" type="radio" value="c"/> 12 columnas</label>
+</div>
+<div class="btn-row">
+<button class="btn" onclick="calificarQuiz()">Verificar respuestas</button>
+<button class="btn ghost" onclick="reiniciarQuiz()">Reiniciar</button>
+</div>
+<div class="result" id="resultadoQuiz"></div>
+</div>
+</section>
+<section id="cierre">
+<h2>9) Cierre</h2>
+<p>
+        Bootstrap permite construir páginas más rápido porque ofrece clases y componentes ya preparados.
+        En esta clase se aplicaron ejemplos concretos: inclusión por CDN, tarjetas con texto e imagen,
+        carrusel, botones de diferentes colores y diseños con grid.
+      </p>
+<p>
+        Lo más importante es comprender qué clase se usa y por qué. Copiar ejemplos puede ayudar al inicio,
+        pero el verdadero aprendizaje ocurre cuando se modifican, se prueban en diferentes pantallas y se adaptan
+        a un proyecto propio.
+      </p>
+<div class="extra-info">
+<strong>Para recordar:</strong> una buena página con Bootstrap no depende solo de usar clases listas,
+        sino de organizar correctamente el contenido con HTML semántico, elegir bien los componentes y probar
+        el resultado en distintos tamaños de pantalla.
+      </div>
+</section>
+</div>
+<footer>
+    Clase 4 - Bootstrap: Ejemplos prácticos | Material de apoyo para Diseño Web
+  </footer>
+<script>
+    function calificarQuiz() {
+      let puntos = 0;
+
+      const respuestas = {
+        q1: "a",
+        q2: "b",
+        q3: "a",
+        q4: "a",
+        q5: "c"
+      };
+
+      for (const pregunta in respuestas) {
+        const seleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+
+        if (seleccionada && seleccionada.value === respuestas[pregunta]) {
+          puntos++;
+        }
+      }
+
+      const resultado = document.getElementById("resultadoQuiz");
+      resultado.className = "result";
+
+      if (puntos === 5) {
+        resultado.classList.add("ok");
+        resultado.textContent = `Excelente. Obtuviste ${puntos}/5. Comprendiste muy bien los ejemplos prácticos de Bootstrap.`;
+      } else if (puntos >= 3) {
+        resultado.classList.add("warn");
+        resultado.textContent = `Vas bien. Obtuviste ${puntos}/5. Conviene repasar CDN, tarjetas, carrusel, botones y grid.`;
+      } else {
+        resultado.classList.add("bad");
+        resultado.textContent = `Obtuviste ${puntos}/5. Te recomiendo volver a leer la clase y practicar los ejemplos paso a paso.`;
+      }
+    }
+
+    function reiniciarQuiz() {
+      document.querySelectorAll('#quizBox input[type="radio"]').forEach(input => input.checked = false);
+
+      const resultado = document.getElementById("resultadoQuiz");
+      resultado.className = "result";
+      resultado.textContent = "";
+    }
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script></body>
+</html>
